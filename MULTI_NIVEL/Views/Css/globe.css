@@ -1,0 +1,22 @@
+﻿.globo {
+    background: #f90606;
+    border-radius: 15px;
+    color: white;
+    padding: 1em;
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+    width: 1px;
+    border-radius: 90px;
+    height: 1px;
+    font-size: 11px;
+    position: absolute;
+    right: 5px;
+}
+
+em {
+    position: relative;
+    top: -8px;
+    left: -8px;
+    font-size: 11px;
+}

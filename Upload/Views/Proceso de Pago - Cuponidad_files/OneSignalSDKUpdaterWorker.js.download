@@ -1,0 +1,4 @@
+try{
+importScripts('https://cdn.onesignal.com/sdks/OneSignalSDK.js');
+
+}catch(Err){}

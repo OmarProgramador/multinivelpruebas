@@ -1,0 +1,12 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ ALTER FUNCTION [dbo].[getSTUFF2](@padre INT)
+ RETURNS VARCHAR(MAX)
+ BEGIN
+ DECLARE @data VARCHAR(MAX)
+
+   SELECT @data = (SELECT STUFF((SELECT '¬' + CONVERT(VARCHAR,af.IdPerson) +'_' + CONVERT(VARCHAR,af.IdPerson_2) FROM dbo.[GetIdEmpleados](@padre) aff INNER JOIN AFFILIATE af ON aff.Id = af.IdPerson_2 FOR XML PATH('')),1,1,''))
+	RETURN @data
+ END

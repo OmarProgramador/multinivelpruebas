@@ -1,0 +1,11 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[usp.USER.Login]
+(
+@user	VARCHAR(50),
+@pass	VARCHAR(50)
+)
+AS
+SELECT [Password] FROM ACCOUNT a WHERE a.Username = @user AND a.[Password] = @pass

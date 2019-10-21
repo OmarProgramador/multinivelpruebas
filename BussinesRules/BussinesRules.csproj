@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DE685DE-9C41-46DA-8112-E47AA111AA4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BussinesRules</RootNamespace>
+    <AssemblyName>BussinesRules</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrAccount.cs" />
+    <Compile Include="BrActivation.cs" />
+    <Compile Include="BrBank.cs" />
+    <Compile Include="BrBeneficiary.cs" />
+    <Compile Include="BrBonus.cs" />
+    <Compile Include="BrCodeTravel.cs" />
+    <Compile Include="BrConnection.cs" />
+    <Compile Include="BrCore_Automation.cs" />
+    <Compile Include="BrDaysFree.cs" />
+    <Compile Include="BrExtorno.cs" />
+    <Compile Include="BrFundation.cs" />
+    <Compile Include="BrHistoryRange.cs" />
+    <Compile Include="BrInformacion.cs" />
+    <Compile Include="BrMembershipPayDetail.cs" />
+    <Compile Include="BrNotification.cs" />
+    <Compile Include="BrNotificationEmail.cs" />
+    <Compile Include="BrPartner.cs" />
+    <Compile Include="BrPayDetail.cs" />
+    <Compile Include="BrPerson.cs" />
+    <Compile Include="BrPlacement.cs" />
+    <Compile Include="BrPosibleRegisterCro.cs" />
+    <Compile Include="BrPromoter.cs" />
+    <Compile Include="BrRegisterAll.cs" />
+    <Compile Include="BrSaveLog.cs" />
+    <Compile Include="BrServices.cs" />
+    <Compile Include="BrTesteo.cs" />
+    <Compile Include="BrTransactionsDetail.cs" />
+    <Compile Include="BrWallet.cs" />
+    <Compile Include="BrWalletToken.cs" />
+    <Compile Include="Code\BrCode.cs" />
+    <Compile Include="BrTypeChange.cs" />
+    <Compile Include="Consuption\BrConsuption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeMembership\BrTypeMembership.cs" />
+    <Compile Include="User\BrCommissions.cs" />
+    <Compile Include="User\BrPayments.cs" />
+    <Compile Include="User\BrUser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeLog\BeLog.csproj">
+      <Project>{6d6b1fd7-db2d-44ac-94bc-b538328319aa}</Project>
+      <Name>BeLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{020218c6-df8b-4a0b-942b-1d1a6a125376}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{DBBCF89C-D735-48AA-BE23-2F45D225BE97}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{020218c6-df8b-4a0b-942b-1d1a6a125376}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

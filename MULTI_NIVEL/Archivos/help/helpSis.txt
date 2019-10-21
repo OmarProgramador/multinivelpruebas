@@ -1,0 +1,12 @@
+procedio que inserta el rango obtenido hasta ese dia
+[usp.RANGE.HISTORY.Put]
+
+
+para pagar sus comisiones de perriodos a todos los socios
+[usp.WALLET.PERIOD.PayCommissions]
+
+
+para calcular el rango residual exec antes de insertar los rangos
+[usp.RANGE.HISTORY.CalculateRangeResid]
+
+

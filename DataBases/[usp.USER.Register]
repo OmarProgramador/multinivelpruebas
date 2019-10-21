@@ -1,0 +1,50 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROC [dbo].[usp.USER.Register]
+@data varchar(max) AS BEGIN
+	declare @Name varchar(max)
+	declare @LastNameFather varchar(max)
+	declare @LastNameMother varchar(max)
+	declare @Birthday varchar (max)
+	declare @Gender varchar(1)
+	declare @DocumentTypeCode varchar(3)
+	declare @NroDocument varchar(max)
+	declare @Email varchar(max)
+	declare @MobilePhone varchar(max)
+	declare @Ubigeo varchar(max)
+	set @Name=(select  top 1  splitdata from split(@data,'|') where id=1 order by splitdata asc)
+	set @LastNameFather=(select  top 1  splitdata from split(@data,'|') where id=2 order by splitdata asc)
+	set @LastNameMother=(select  top 1  splitdata from split(@data,'|') where id=3 order by splitdata asc)
+	set @Birthday=(select  top 1  splitdata from split(@data,'|') where id=4 order by splitdata asc)
+	set @Gender=(select  top 1  splitdata from split(@data,'|') where id=5 order by splitdata asc)
+	set @Email=(select  top 1  splitdata from split(@data,'|') where id=6 order by splitdata asc)
+	set @MobilePhone=(select  top 1  splitdata from split(@data,'|') where id=7 order by splitdata asc)
+	set @Ubigeo=(select  top 1  splitdata from split(@data,'|') where id=8 order by splitdata asc)
+	set @DocumentTypeCode=(select  top 1  splitdata from split(@data,'|') where id=9 order by splitdata asc)
+	set @NroDocument=(select  top 1  splitdata from split(@data,'|') where id=10 order by splitdata asc)
+	INSERT INTO PERSON (
+						Name,
+						LastNameFather,
+						LastNameMother,
+						Birthday,
+						Gender,
+						Email,
+						MobilePhone,
+						ubigeo,
+						DocumentTypeCode,
+						NroDocument) VALUES(
+											@Name,
+											@LastNameFather,
+											@LastNameMother,
+											@Birthday,
+											@Gender,
+											@Email,
+											@MobilePhone,
+											@Ubigeo,
+											@DocumentTypeCode,
+											@NroDocument
+											)
+END

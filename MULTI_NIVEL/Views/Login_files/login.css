@@ -1,0 +1,450 @@
+﻿        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+        h2{
+            font-weight: normal;
+        }
+
+        form{
+            margin: 0;
+        }
+        .row {
+            position: relative;
+        }
+
+        .member-login-container, .member-login-container input, .password-reset-dialog
+        {
+            font-family: 'open sans';
+            font-size: 13px;
+            color: #636363;
+        }
+
+        .section-content .fb-login-button-container {
+            margin-top: 0;
+            height: auto !important;
+        }
+
+        .section-content .fb-login-position {
+            position: absolute;
+            right: 0;
+            top: 9px;
+        }
+
+        .km-phone .section-content .fb-login-button-container {
+            margin-top: 0;
+            position: relative;
+            left: 10px;
+            top: 5px;
+        }
+
+        .password-reset-dialog{
+            padding: 15px !important;
+            color: #636363 !important;
+        }
+
+        input#buttonUpdatePassword {
+            margin-top: 25px;
+            height: 25px;
+        }
+
+        .section-content.login-container {
+            max-width: 330px;
+        }
+
+        .section-content.login-container .loading-bar {
+                position: absolute;
+            }
+
+            .section-content.login-container .loading-image {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                position: absolute;
+                background-size: 30px;
+                background-image: url(../../Content/Images/Site/ProgressAnimation.gif?v2);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .section-content.login-container .loading-color {
+                background-color: black;
+                width: 100%;
+                height: 100%;
+                opacity: .2;
+            }
+
+        .member-login-container .section-content {
+            max-width: 400px;
+            margin: auto;
+            background-color: #F7F7F7;
+            border-bottom: 4px solid #3D7EB7;
+            padding: 30px 75px;
+        }
+
+            .member-login-container .section-content.login-footer {
+                border-bottom: none;
+                padding: 10px 15px;
+                width: 450px;
+                margin-bottom: 10px;
+            }
+
+
+        .link{
+            cursor: pointer;
+            color: #1F6EB0;
+        }
+
+        .forgot-pass
+        {
+            margin-top: 20px;
+        }
+
+        div[data-role="splitview"] {
+            display: none;
+        }
+
+        .section-content.create-account-container h2 {
+            margin-bottom: 0;
+        }
+
+        .section-content.login-container.guest-checout {
+            width: 350px;
+        }
+
+        .section-content.remember-pass-container {
+            width: 350px;
+        }
+
+        .large-fb-register-button .fb-login-button-container {
+            position: absolute;
+            top: 10px;
+            right: 1px;
+        }
+
+        input[type=text], input[type=password]{
+            padding-bottom: 5px;
+            padding-top: 5px;
+            padding-left: 10px;
+            border: 1px solid #cecece;
+            font-family: 'open sans';
+            color: #706F6F;
+            border-radius: 1px;
+            margin: 0px 0px 5px 0px;
+            padding: 9px 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            width: 100%;
+            clear: right;
+        }
+
+        .title-container {
+            text-align: left;
+        } 
+
+        .section-title {
+            font-family: 'open sans';
+            font-size: 22px;
+        }
+
+        input[type=submit] {
+            background-color: #3D7EB7;
+            border-radius: 2px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-family: 'open sans';
+            font-size: 16px;
+            width: 100%;
+            text-align: center;
+            padding: 9px 0;
+            border: none;
+        }
+
+        .clearfix {
+            height: 20px;
+        }
+
+        input.validation-error {
+            border: 1px solid #D0021B;
+            background-color: rgba(208, 2, 27, 0.1);
+        }
+
+        .global-error, .field-validation-error{
+            color: #D0021B;
+        }
+
+        .global-error {
+            display: block;
+            width: 400px;
+            margin-top: 10px;
+        }
+
+        .member-login-container .global-error.field-validation-error{
+            display: none;
+        }
+
+        .member-login-container #buttonLogin{
+            float: none;
+        }
+
+        .member-login-container .field-validation-error {
+            font-family: 'open sans';
+            font-style: inherit;
+            display: inline-block;
+            line-height: 27px;
+        }
+
+        img#submitSignup {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 4px;
+            padding-left: 10px;
+            right: -40px;
+        }
+
+        .login-message {
+            margin-top: 15px;
+        }
+
+        .login.link {
+            margin: 15px 0px;
+        }
+
+         .login-message .login.link {
+            padding: 0;
+        }
+
+        .member-login-container .header-logo-icon {
+            max-width: 550px;
+            height: auto;
+            max-height: initial;
+        }
+
+        .member-login-container .signupform-wrapper {
+            display: block;
+            vertical-align: middle;
+            width: auto;
+        }
+
+        .member-login-container .alignCheckboxtextbox {
+            margin: 0;
+            width: auto;
+        }
+        .birthdate-picker-member {
+            width: 32% !important;
+        }
+        .birthdate-picker-member-select {
+            width: 34% !important;
+        }
+        .pass-sent-container .section-title {
+            text-align: center;
+        }
+
+        .return-to-login
+        {
+            margin-top: 15px;
+        }
+
+        .error-area {
+            text-align: left;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(208, 2, 27, 0.1);
+            border: 1px solid #D0021B;
+            clear: both;
+            word-wrap:break-word;
+        }
+
+        .section-description {
+            text-align: left;
+        }
+
+        .global-error{
+            display: none;
+        }
+
+        .error-area .global-error{
+            display: block;
+        }
+
+        .pm-confirm-button.guest-button{
+            background-color: #878B90;
+        }
+
+        .checkout-title {
+            font-weight: normal;
+            margin-left: 10px;
+        }
+
+            .checkout-title .text-message{
+                position: relative;
+            }
+
+        i.fa.fa-shield {
+            font-size: 35px;
+            position: absolute;
+            left: -35px;
+            top: 2px;
+        }
+
+        .separator {
+            position: relative;
+        }
+
+        .line {
+            border: 1px solid #C9C9C9;
+            margin: 26px 0;
+        }
+
+        .middle-text {
+            background-color: #F7F7F7;
+            z-index: 2;
+            position: absolute;
+            left: 45%;
+            padding: 0 10px;
+            top: -9px;
+        }
+
+        .create-account-container .member-register h2.section-title{
+            margin: 0;
+            margin-left: 0 !important;
+            padding: 0;
+            margin-bottom: 18px;
+            float: left;
+            text-align: left;
+        }
+           
+
+        .create-account-container .member-register select, .create-account-container .member-register .address-container input{
+            margin-left: 0 !important;
+        }
+
+        select.use-placeholder-style {
+            margin-bottom: 5px;
+        }
+
+        .login-footer
+        {
+            width: 500px;
+            margin: auto;
+        }
+
+            .login-footer table
+            {
+                font-size: 10px;
+            }
+
+        /*Organisation 8654*/
+
+        .organisation8654.member-login-container .header-logo-icon {
+            margin: 16px 0;
+        }
+
+        .organisation8654.member-login-container .section-content.login-footer {
+            padding: 30px 15px;
+            margin-bottom: 32px;
+        }
+
+        .organisation8654.member-login-container .section-content {
+            border-bottom: 1px solid #CECECE;
+        }
+
+        /*Organisation 8654*/
+        .create-account-container .field-web-control.readonly{
+            margin-top: 0px;
+            word-break: normal;
+        }
+        
+        .create-account-container .multipickertitle {
+            margin: 0px 0px 10px;
+        }
+
+        .hidden-label {
+            position: fixed !important;
+            height: 1px !important;
+            width: 1px !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            z-index: -999 !important;
+            display: inline !important;
+        }
+
+            .create-account-container .multipickertitle .placeholder, .create-account-container .terms-conditions-wrapper #AreTermsAndConditionsCheckbox {
+                margin-left: 0px;
+                padding-left: 0px;
+            }
+
+        @media (max-width: 535px) {
+            .section-content .fb-login-button-container {
+                position: static;
+                margin: -11px 0 13px 0;
+                text-align: center;
+            }
+
+            .section-content.login-container .fb-login-button-container {
+                margin: 0 0 0 38%;
+            }
+
+            .create-account-container .member-register h2.section-title {
+                float: none;
+                text-align: center;
+            }
+            .section-title {
+                text-align: center;
+            }
+        }
+
+        @media (max-width:399px) {
+            .member-login-container .section-content, .section-content.login-containe {
+                padding: 4%;
+                width: auto;
+            }
+        }
+
+.signupform-wrapper .address-container {
+    width: 100%;
+}
+
+.signupform-wrapper .alignCheckbox {
+    float: left;
+    margin: 0;
+}
+
+.signupform-wrapper.member-register .alignCheckbox input[type="checkbox"],
+.signupform-wrapper.member-register label.placeholder {
+    margin-left: 0;
+}
+
+.section-content.login-container input[type="text"]::-webkit-input-placeholder,
+.section-content.login-container input[type="password"]::-webkit-input-placeholder,
+.section-content.create-account-container input[type="text"]::-webkit-input-placeholder,
+.section-content.create-account-container input[type="password"]::-webkit-input-placeholder,
+.section-content.remember-pass-container input[type="text"]::-webkit-input-placeholder,
+.section-content.remember-pass-container input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #696969 !important; 
+}
+.section-content.login-container input[type="text"]::-moz-placeholder,
+.section-content.login-container input[type="password"]::-moz-placeholder,
+.section-content.create-account-container input[type="text"]::-moz-placeholder,
+.section-content.create-account-container input[type="password"]::-moz-placeholder,
+.section-content.remember-pass-container input[type="text"]::-moz-placeholder,
+.section-content.remember-pass-container input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+  color: #696969 !important;  
+}
+.section-content.login-container input[type="text"]:-ms-input-placeholder,
+.section-content.login-container input[type="password"]:-ms-input-placeholder,
+.section-content.create-account-container input[type="text"]:-ms-input-placeholder,
+.section-content.create-account-container input[type="password"]:-ms-input-placeholder,
+.section-content.remember-pass-container input[type="text"]:-ms-input-placeholder,
+.section-content.remember-pass-container input[type="password"]:-ms-input-placeholder { /* IE 10+ */
+  color: #696969 !important;  
+}
+.section-content.login-container input[type="text"]:-moz-placeholder,
+.section-content.login-container input[type="password"]:-moz-placeholder,
+.section-content.create-account-container input[type="text"]:-moz-placeholder,
+.section-content.create-account-container input[type="password"]:-moz-placeholder,
+.section-content.remember-pass-container input[type="text"]:-moz-placeholder,
+.section-content.remember-pass-container input[type="password"]:-moz-placeholder { /* Firefox 18- */
+  color: #696969 !important; 
+}

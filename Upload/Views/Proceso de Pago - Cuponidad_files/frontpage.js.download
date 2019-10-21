@@ -1,0 +1,87 @@
+﻿
+
+function newPopup(url) {
+    popupWindow = window.open(
+		url, 'popUpWindow', 'height=420,width=660,left=10,top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+}
+
+$(document).ready(function() {
+
+    $("#CityPopup").dialog({ autoOpen: false, modal: true, height: 345, width: 610 });
+    $("#logearme").dialog({
+        width: 'auto',
+        maxWidth: 850,
+        height: 'auto',
+        modal: true,
+        fluid: true,
+        resizable: false,
+        autoOpen: false,
+        show: { effect: "fadeIn", duration: 500 },
+        hide: { effect: "fadeOut", duration: 500 }, 
+        open: function(type, data) {
+            $(this).parent().appendTo("form");
+        }
+    });
+    $("#closeX").click(function() {
+        $("#ctl00_ContentPlaceHolder1_barraRegistro").fadeTo(300, .1);
+        $("#ctl00_ContentPlaceHolder1_barraRegistro").slideUp(300);
+        setCookie("subscribed", true, 20);
+        return false;
+    });
+    $(".ui-dialog-titlebar").hide();  
+ 
+    $(".cityPopupClose").click(function() {
+        $("#CityPopup").dialog("close")
+    });
+ 
+    if ($("#ctl00_LoginResult").val() == "0") {
+        jQuery('#logearme').dialog('open');
+    }
+
+});
+
+////////////////////////////
+
+$(document).ready(function() {
+    $("#PublicidadPopupDestok").dialog({
+        width: 'auto',
+        height: 'auto',
+        modal: true,
+        fluid: true,
+        resizable: false,
+        autoOpen: false,
+        show: { effect: "fadeIn", duration: 2000 },
+        hide: { effect: "fadeOut", duration: 500 },
+        open: function(type, data) {
+            $(this).parent().appendTo("form");
+        }
+    });
+
+    if ($("#ctl00_hfPPD").val() == "1") {
+        setTimeout(function() {
+        jQuery('#PublicidadPopupDestok').dialog('open'); 
+        }, 3000);
+        
+    }
+
+    $("#PublicidadPopupMobile").dialog({
+        width: 'auto',
+        height: 'auto',
+        modal: true,
+        fluid: true,
+        resizable: false,
+        autoOpen: false,
+        show: { effect: "fadeIn", duration: 2000 },
+        hide: { effect: "fadeOut", duration: 500 },
+        open: function(type, data) {
+            $(this).parent().appendTo("form");
+        }
+    });
+
+    if ($("#ctl00_hfPPM").val() == "1") {
+        setTimeout(function() {
+        jQuery('#PublicidadPopupMobile').dialog('open');
+        }, 3000);
+    }
+    $(".ui-dialog-titlebar").hide(); 
+});

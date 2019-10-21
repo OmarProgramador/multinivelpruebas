@@ -1,0 +1,215 @@
+﻿function BindEvents() {
+    $(document).ready(function() {
+
+        $("#box_mediospagob_comprar").on("click", ".botonProcesarPrevious", function() {
+            var rbC = '0';
+            var TI = document.getElementById('ctl00_ContentPlaceHolder1_hfTI').value;
+            var hfCFP = document.getElementById('ctl00_ContentPlaceHolder1_hfCFP').value;
+
+            var hfRD = document.getElementById('ctl00_ContentPlaceHolder1_hfRD').value;
+            var depa = '';
+            var prov = '';
+            var dist = '';
+            var dni = '';
+            var nomb = '';
+            var celu = '';
+            var dire = '';
+            var refe = '';
+            var dataD = '';
+            var selectedText = '';
+            var selectedTextDep = '';
+
+            try {
+                if (hfRD == '1') {
+                    depa = document.getElementById('ctl00_ContentPlaceHolder1_ddlDepartamentoD');
+                    prov = document.getElementById('ctl00_ContentPlaceHolder1_ddlProvinciaD').value;
+                    dist = document.getElementById('ctl00_ContentPlaceHolder1_ddlDistritoD');
+                    dni = document.getElementById('ctl00_ContentPlaceHolder1_txtDNID').value;
+                    nomb = document.getElementById('ctl00_ContentPlaceHolder1_txtNombreCompletoD').value;
+                    celu = document.getElementById('ctl00_ContentPlaceHolder1_txtTelefonoD').value;
+                    dire = document.getElementById('ctl00_ContentPlaceHolder1_txtDireccionD').value;
+                    refe = document.getElementById('ctl00_ContentPlaceHolder1_txtReferenciaD').value;
+                    selectedText = dist.options[dist.selectedIndex].text;
+                    selectedTextDep = depa.options[depa.selectedIndex].text;
+                    dataD = depa.value + '|' + prov + '|' + dist.value + '|' + dni + '|' + nomb + '|' + celu + '|' + dire + '|' + refe + '|' + selectedText + '|' + selectedTextDep;
+
+                    if (depa == '' || prov == '' || dist == '' || dni == '' || nomb == '' || celu == '' || dire == '' || refe == '' || selectedText == '') {
+                        $.confirm({
+                            title: 'Proceso de Pago',
+                            theme: 'modern',
+                            type: 'red',
+                            typeAnimated: true,
+                            content: 'Error, ingrese todos los datos del Delivery',
+                            buttons: {
+                                CERRAR: {
+                                    text: 'CERRAR',
+                                    btnClass: 'btn-red',
+                                    action: function() {
+                                        //window.location = data.d.split("|||")[2]
+                                    }
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                }
+            } catch (Error) { }
+
+            var sel = '0';
+            try {
+                if (document.getElementById('ctl00_ContentPlaceHolder1_rbVisa').checked) {
+                    sel = '1';
+                }
+            } catch (Error2) { sel = '0'; }
+
+            if (hfCFP == '1' && sel == '1') {
+
+                try {
+                    if (document.getElementById('ctl00_ContentPlaceHolder1_rbSiCredito').checked) {
+                        rbC = '1';
+                    }
+                } catch (Error) { rbC = '0'; }
+
+                try {
+                    $.ajax({
+                        type: "POST",
+                        url: "fbProcessRegistration.aspx/GetCulqiKeyProcess",
+                        dataType: "json",
+                        data: "{ 'TI': '" + TI + "' , 'rbC': '" + rbC + "' }",
+                        contentType: "application/json; charset=utf-8",
+                        success: function(data) {
+                            var strkp = data.d.split("|||");
+                            Culqi.publicKey = strkp[0];
+                            Culqi.settings({
+                                title: strkp[4],
+                                currency: strkp[3],
+                                description: strkp[1],
+                                amount: strkp[2]
+                            });
+                            Culqi.open();
+                        }
+                    });
+                } catch (Error) { }
+                return false;
+
+            } else {
+                var btn = document.getElementById('ctl00_ContentPlaceHolder1_btnPagarProcesar');
+                btn.click();
+            }
+        });
+
+    });
+}
+
+
+function culqi() {
+    if (Culqi.token) {
+        var TI = document.getElementById('ctl00_ContentPlaceHolder1_hfTI').value;
+        var hfCFP = document.getElementById('ctl00_ContentPlaceHolder1_hfCFP').value;
+        var rbC = '0';
+
+        var hfRD = document.getElementById('ctl00_ContentPlaceHolder1_hfRD').value;
+        var depa = '';
+        var prov = '';
+        var dist = '';
+        var dni = '';
+        var nomb = '';
+        var celu = '';
+        var dire = '';
+        var refe = '';
+        var dataD = '';
+        var selectedText = '';
+        var selectedTextDep = '';
+
+        try {
+            if (hfRD == '1') {
+                depa = document.getElementById('ctl00_ContentPlaceHolder1_ddlDepartamentoD');
+                prov = document.getElementById('ctl00_ContentPlaceHolder1_ddlProvinciaD').value;
+                dist = document.getElementById('ctl00_ContentPlaceHolder1_ddlDistritoD');
+                dni = document.getElementById('ctl00_ContentPlaceHolder1_txtDNID').value;
+                nomb = document.getElementById('ctl00_ContentPlaceHolder1_txtNombreCompletoD').value;
+                celu = document.getElementById('ctl00_ContentPlaceHolder1_txtTelefonoD').value;
+                dire = document.getElementById('ctl00_ContentPlaceHolder1_txtDireccionD').value;
+                refe = document.getElementById('ctl00_ContentPlaceHolder1_txtReferenciaD').value;
+                selectedText = dist.options[dist.selectedIndex].text;
+                selectedTextDep = depa.options[depa.selectedIndex].text;
+                dataD = depa.value + '|' + prov + '|' + dist.value + '|' + dni + '|' + nomb + '|' + celu + '|' + dire + '|' + refe + '|' + selectedText + '|' + selectedTextDep;
+            }
+        } catch (Error) { }
+
+        try {
+            if (document.getElementById('ctl00_ContentPlaceHolder1_rbSiCredito').checked) {
+                rbC = '1';
+            }
+        } catch (Error) { rbC = '0'; }
+        try {
+            $.ajax({
+                type: "POST",
+                url: "fbProcessRegistration.aspx/SendCulqiKeyProcess",
+                dataType: "json",
+                data: "{ 'TK': '" + Culqi.token.id + "' , 'TI': '" + TI + "' , 'rbC': '" + rbC + "' , 'dataD' : '" + dataD + "' }",
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    if (data.d.split("|||")[0] == "1") {
+                        $.confirm({
+                            title: 'Proceso de Pago',
+                            theme: 'modern',
+                            type: 'green',
+                            typeAnimated: true,
+                            content: data.d.split("|||")[1],
+                            buttons: {
+                                OK: {
+                                    text: 'OK',
+                                    btnClass: 'btn-green',
+                                    action: function() {
+                                        window.location = data.d.split("|||")[2]
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    if (data.d.split("|||")[0] == "-2") {
+                        $.confirm({
+                            title: 'Proceso de Pago',
+                            theme: 'modern',
+                            type: 'red',
+                            typeAnimated: true,
+                            content: data.d.split("|||")[1],
+                            buttons: {
+                                CERRAR: {
+                                    text: 'CERRAR',
+                                    btnClass: 'btn-red',
+                                    action: function() {
+                                        window.location = data.d.split("|||")[2]
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    if (data.d.split("|||")[0] == "-1") {
+                        $.confirm({
+                            title: 'Proceso de Pago',
+                            theme: 'modern',
+                            type: 'yellow',
+                            typeAnimated: true,
+                            content: data.d.split("|||")[1],
+                            buttons: {
+                                CERRAR: {
+                                    text: 'CERRAR',
+                                    btnClass: 'btn-yellow',
+                                    action: function() {
+                                        //window.location = data.d.split("|||")[2]
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        } catch (Error) { }
+
+    } else {
+        console.log(Culqi.error);
+        alert(Culqi.error.mensaje);
+    }
+};

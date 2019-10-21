@@ -1,0 +1,32 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[usp.ACCOUNT.Generate] 
+@data varchar(max)
+AS BEGIN
+	declare @pc int
+	set @pc=(SELECT TOP 1 IdPerson from PERSON where NroDocument=@data order by IdPerson desc )
+	declare @dataUser varchar(max)
+	
+	set @dataUser=(select
+	(select STUFF
+	((select + '¬'+ SUBSTRING(Name,1,1)+SUBSTRING(LastNameFather,1,1) 
+	from PERSON 
+	where PERSON.IdPerson=@pc
+	for xml path('')),1,1,''))+(SELECT PERSON.NroDocument FROM PERSON where PERSON.IdPerson=@pc)) 
+	declare @dataPassword varchar (max)
+	
+	set @dataPassword=(select
+	(select STUFF
+	((select + '¬'+ SUBSTRING(Name,1,1)+SUBSTRING(LastNameFather,1,1) 
+	from PERSON 
+	where PERSON.IdPerson=@pc 
+	for xml path('')),1,1,'')))+(SELECT PERSON.NroDocument FROM  PERSON WHERE PERSON.IdPerson=@pc) 
+	INSERT INTO ACCOUNT (Username,
+						ACCOUNT.Password,
+						IdPerson) VALUES (@dataUser,
+											@dataPassword,
+											@pc)
+SELECT @dataUser
+END

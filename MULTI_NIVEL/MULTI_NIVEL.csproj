@@ -1,0 +1,2753 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F84E92D-667A-4060-A3E6-F634ADF523F8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MULTI_NIVEL</RootNamespace>
+    <AssemblyName>MULTI_NIVEL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WhatsAppApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WhatsAppAPI.15.4.29\lib\net40\WhatsAppApi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Archivos\help\helpSis.txt" />
+    <Content Include="Archivos\imgprew.png" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Html\comisiones.htm" />
+    <Content Include="Html\editar.htm" />
+    <Content Include="Html\home.htm" />
+    <Content Include="Html\ingresar.htm" />
+    <Content Include="Html\red.htm" />
+    <Content Include="Html\registro.htm" />
+    <Content Include="Html\TableTree.html" />
+    <Content Include="Range.aspx" />
+    <Content Include="Resources\Images\bag.png" />
+    <Content Include="Resources\Images\bannersa.jpg" />
+    <Content Include="Resources\Images\check.png" />
+    <Content Include="Resources\Images\checkambar.png" />
+    <Content Include="Resources\Images\culqi.jpeg" />
+    <Content Include="Resources\Images\faicon.PNG" />
+    <Content Include="Resources\Images\loader-gif.gif" />
+    <Content Include="Resources\Images\Loading.gif" />
+    <Content Include="Resources\Images\logo.png" />
+    <Content Include="Resources\Images\novologo.png" />
+    <Content Include="Resources\Images\rec.png" />
+    <Content Include="Resources\Images\x.svg" />
+    <Content Include="Resources\ImgNews\novologo.png" />
+    <Content Include="Resources\ImgNews\puntacana1.jpg" />
+    <Content Include="Resources\ImgNews\sanandres.jpg" />
+    <Content Include="Resources\imguser\profile.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="Views\AddMembPayWallet.aspx" />
+    <Content Include="Views\AddMembPayWalletCc.aspx" />
+    <Content Include="Views\AdvancePayWallet.aspx" />
+    <Content Include="Views\BDataCorrection.aspx" />
+    <Content Include="Views\BDataCorrectionC.aspx" />
+    <Content Include="Views\BDepositRequest.aspx" />
+    <Content Include="Views\BDepositRequestC.aspx" />
+    <Content Include="Views\Bextorno.aspx" />
+    <Content Include="Views\BextornoC.aspx" />
+    <Content Include="Views\BlistExtorno.aspx" />
+    <Content Include="Views\BlistExtornoC.aspx" />
+    <Content Include="Views\Bonus.aspx" />
+    <Content Include="Views\BonusC.aspx" />
+    <Content Include="Views\BonusPeriod.aspx" />
+    <Content Include="Views\BonusPeriodC.aspx" />
+    <Content Include="Views\ChangingScheduleWallett.aspx" />
+    <Content Include="Views\ChangingScheduleWallettC.aspx" />
+    <Content Include="Views\Css\bootstrap-datepicker.min.css" />
+    <Content Include="Views\Css\ResponsivePagos.css" />
+    <Content Include="Views\Css\StyleProfile.css" />
+    <Content Include="Views\EditPthotoC.aspx" />
+    <Content Include="Views\EndPaymendMbs.aspx" />
+    <Content Include="Views\EndPaymentQuote.aspx" />
+    <Content Include="Views\EndPaymentSby.aspx" />
+    <Content Include="Views\EndPaymentSendLater.aspx" />
+    <Content Include="Views\EndPaymentsPostponedPay.aspx" />
+    <Content Include="Views\EndPaymentUpgrade.aspx" />
+    <Content Include="Views\HistorialTravelers.aspx" />
+    <Content Include="Views\HistoryRange.aspx" />
+    <Content Include="Views\HistoryRangeC.aspx" />
+    <Content Include="Views\HistoryTravelersC.aspx" />
+    <Content Include="Views\home_files\croppie.css" />
+    <Content Include="Views\home_files\croppie.min.js" />
+    <Content Include="Views\home_files\subir.php" />
+    <Content Include="Views\img\banban2.png" />
+    <Content Include="Views\img\clubresort.png" />
+    <Content Include="Views\img\DiamanteCoronaomar.png" />
+    <Content Include="Views\img\DiamanteImperialomar.png" />
+    <Content Include="Views\img\DiamanteNegroomar.png" />
+    <Content Include="Views\img\fondo222.png" />
+    <Content Include="Views\img\fondodia.png" />
+    <Content Include="Views\img\FondoDiamante.png" />
+    <Content Include="Views\img\FondoDiamanteAzul.png" />
+    <Content Include="Views\img\FondoDiamanteNegro.png" />
+    <Content Include="Views\img\fondoDiamanteOmar.png" />
+    <Content Include="Views\img\fondoDNE.png" />
+    <Content Include="Views\img\fondoESM.png" />
+    <Content Include="Views\img\FondoEsmeralda.png" />
+    <Content Include="Views\img\fondoESMeraldaOmar.png" />
+    <Content Include="Views\img\FondoOro.png" />
+    <Content Include="Views\img\fondoPLT.png" />
+    <Content Include="Views\img\fondoRUB.png" />
+    <Content Include="Views\img\FondoRuby.png" />
+    <Content Include="Views\img\fondorubyOmar.png" />
+    <Content Include="Views\img\fondosoc.png" />
+    <Content Include="Views\img\FondoSocio.png" />
+    <Content Include="Views\img\fondoZAF.png" />
+    <Content Include="Views\img\fondoZAFiroomar.png" />
+    <Content Include="Views\img\igualito.jpg" />
+    <Content Include="Views\img\igualito2.jpg" />
+    <Content Include="Views\img\logofinal.jpg" />
+    <Content Include="Views\img\logo_.png" />
+    <Content Include="Views\img\marco.png" />
+    <Content Include="Views\img\oro.png" />
+    <Content Include="Views\img\PinCorona.png" />
+    <Content Include="Views\img\PinDiamanteAzulFinal.png" />
+    <Content Include="Views\img\PinDiamanteFinal.png" />
+    <Content Include="Views\img\PinDiamanteImperial.png" />
+    <Content Include="Views\img\PinDiamanteNegro.png" />
+    <Content Include="Views\img\PinEsmeraldaFinal.png" />
+    <Content Include="Views\img\PinOro.png" />
+    <Content Include="Views\img\PinRubyFinal.png" />
+    <Content Include="Views\img\PinSocioStandardFinal.png" />
+    <Content Include="Views\img\plata.png" />
+    <Content Include="Views\img\PlataFinal.png" />
+    <Content Include="Views\img\PlataOmar.png" />
+    <Content Include="Views\img\Platatrans.png" />
+    <Content Include="Views\img\rdr.png" />
+    <Content Include="Views\img\restaurante.png" />
+    <Content Include="Views\img\restauranteps.png" />
+    <Content Include="Views\img\restauranteps2.png" />
+    <Content Include="Views\img\universidad.png" />
+    <Content Include="Views\img\wallet.jpg" />
+    <Content Include="Views\img\wallete.png" />
+    <Content Include="Views\LoginReceipt.aspx" />
+    <Content Include="Views\PaymentsC.aspx" />
+    <Content Include="Views\PaymentsMake.aspx" />
+    <Content Include="Views\PaymentsMakeC.aspx" />
+    <Content Include="Views\PayOnLineC.aspx" />
+    <Content Include="Views\PayOnLineQuote.aspx" />
+    <Content Include="Views\PayOnLineQuoteC.aspx" />
+    <Content Include="Views\PayQuoteCulqi.aspx" />
+    <Content Include="Views\PayQuoteWallet.aspx" />
+    <Content Include="Views\PayServicesWallet.aspx" />
+    <Content Include="Views\PayWallet.aspx" />
+    <Content Include="Views\PayWalletCc.aspx" />
+    <Content Include="Views\Placement.aspx" />
+    <Content Include="Views\PlacementCc.aspx" />
+    <Content Include="Views\PoliticsStaBye.aspx" />
+    <Content Include="Views\PoliticsTravel.aspx" />
+    <Content Include="Views\MailAccount.aspx" />
+    <Content Include="Views\MailAccountActive.aspx" />
+    <Content Include="Views\MailAccountActiveC.aspx" />
+    <Content Include="Views\MailAccountC.aspx" />
+    <Content Include="Views\MailDeleteBussinesC.aspx" />
+    <Content Include="Views\MailSetBussinesC.aspx" />
+    <Content Include="Views\MailStatus.aspx" />
+    <Content Include="Views\Promotores.aspx" />
+    <Content Include="Views\PromotoresC.aspx" />
+    <Content Include="Views\ResidualTree.aspx" />
+    <Content Include="Views\ResidualTreeC.aspx" />
+    <Content Include="Views\Script\AddMemberCulqi.js" />
+    <Content Include="Views\Script\AddPayQuoteCulqi.js" />
+    <Content Include="Views\Script\BDepositRequest.js" />
+    <Content Include="Views\Script\Bonus.js" />
+    <Content Include="Views\Script\bootstrap-datepicker.min.js" />
+    <Content Include="Views\Script\HistoryTravelersC.js" />
+    <Content Include="Views\Script\jquery.validate.js" />
+    <Content Include="Views\Script\jquery.validate.min.js" />
+    <Content Include="Views\Script\JsPlacement.js" />
+    <Content Include="Views\Script\MailAccount.js" />
+    <Content Include="Views\Script\MailAccountActive.js" />
+    <Content Include="Views\Script\Login.js" />
+    <Content Include="Views\Script\ScriptHistoryTravelers.js" />
+    <Content Include="Views\Script\ScriptReceiptsUser.js" />
+    <Content Include="Views\Script\ScriptTools.js" />
+    <Content Include="Views\Script\UploadTools.js" />
+    <Content Include="Views\Script\Wallet.js" />
+    <Content Include="Views\Script\_virtualOffice.js" />
+    <Content Include="Views\SendEmailMissing.aspx" />
+    <Content Include="Views\Tools.aspx" />
+    <Content Include="Views\travelagency.aspx" />
+    <Content Include="Views\TravelBenefitsC.aspx" />
+    <Content Include="Views\Traveling.aspx" />
+    <Content Include="Views\Activation.aspx" />
+    <Content Include="Views\ActivationC.aspx" />
+    <Content Include="Views\AddMembCulqui.aspx" />
+    <Content Include="Views\AddMembCulquiC.aspx" />
+    <Content Include="Views\AddMembership.aspx" />
+    <Content Include="Views\AddMembPagos.aspx" />
+    <Content Include="Views\AddMembPayDeposito.aspx" />
+    <Content Include="Views\AddMembPolitics.aspx" />
+    <Content Include="Views\Advancepay.aspx" />
+    <Content Include="Views\AdvancepayCulqi.aspx" />
+    <Content Include="Views\AdvancepayCulqiC.aspx" />
+    <Content Include="Views\AdvancepayDeposito.aspx" />
+    <Content Include="Views\BackEnd.aspx" />
+    <Content Include="Views\BListPartner.aspx" />
+    <Content Include="Views\BListPartnerC.aspx" />
+    <Content Include="Views\BPayServices.aspx" />
+    <Content Include="Views\BPayServicesC.aspx" />
+    <Content Include="Views\ChangingSchedule.aspx" />
+    <Content Include="Views\ChangingScheduleCulqi.aspx" />
+    <Content Include="Views\ChangingScheduleCulqiC.aspx" />
+    <Content Include="Views\ChangingScheduleDeposito.aspx" />
+    <Content Include="Views\Code.aspx" />
+    <Content Include="Views\CodeTravelB.aspx" />
+    <Content Include="Views\CodeTravelBC.aspx" />
+    <Content Include="Views\CodeTravelBData.aspx" />
+    <Content Include="Views\Comission.aspx" />
+    <Content Include="Views\ComissionC.aspx" />
+    <Content Include="Views\ComissionList.aspx" />
+    <Content Include="Views\ComissionListC.aspx" />
+    <Content Include="Views\Consumo.aspx" />
+    <Content Include="Views\Contato.aspx" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\colorschememapping.xml" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\filelist.xml" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\header.htm" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image001.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image002.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image003.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image004.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image005.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image006.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image007.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image008.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image009.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image010.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image011.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image012.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image013.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image014.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image015.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image016.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image017.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image018.png" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\image019.png" />
+    <Content Include="Views\Css\BStyle.css" />
+    <Content Include="Views\Css\globe.css" />
+    <Content Include="Views\Css\MyStyle.css" />
+    <Content Include="Views\DetailStore.aspx" />
+    <Content Include="Views\DetailStore2.aspx" />
+    <Content Include="Views\CurrentPointsC.aspx" />
+    <Content Include="Views\DisabledAccountC.aspx" />
+    <Content Include="Views\Documents.aspx" />
+    <Content Include="Views\Eagency.aspx" />
+    <Content Include="Views\EditB.aspx" />
+    <Content Include="Views\EditC.aspx" />
+    <Content Include="Views\EditNews.aspx" />
+    <Content Include="Views\EditNewsC.aspx" />
+    <Content Include="Views\EndPayments.aspx" />
+    <Content Include="Views\EndPayments2.aspx" />
+    <Content Include="Views\EndPayments3.aspx" />
+    <Content Include="Views\EndPaymentServices.aspx" />
+    <Content Include="Views\EndPaymentskitExo.aspx" />
+    <Content Include="Views\ex.aspx" />
+    <Content Include="Views\FilesContratos\WebForm1.aspx" />
+    <Content Include="Views\FreePass.aspx" />
+    <Content Include="Views\FrmContrato.aspx" />
+    <Content Include="Views\HistorialCompras.aspx" />
+    <Content Include="Views\HistorialCompras_files\all.css" />
+    <Content Include="Views\HistorialCompras_files\animate.css" />
+    <Content Include="Views\HistorialCompras_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\HistorialCompras_files\bootstrap.min.css" />
+    <Content Include="Views\HistorialCompras_files\chosen.css" />
+    <Content Include="Views\HistorialCompras_files\croppie.min.css" />
+    <Content Include="Views\HistorialCompras_files\datepicker3.css" />
+    <Content Include="Views\HistorialCompras_files\daterangepicker-bs3.css" />
+    <Content Include="Views\HistorialCompras_files\font-awesome.css" />
+    <Content Include="Views\HistorialCompras_files\jasny-bootstrap.min.css" />
+    <Content Include="Views\HistorialCompras_files\ladda-themeless.min.css" />
+    <Content Include="Views\HistorialCompras_files\logo.png" />
+    <Content Include="Views\HistorialCompras_files\no-imagen.jpg" />
+    <Content Include="Views\HistorialCompras_files\slick-theme.min.css" />
+    <Content Include="Views\HistorialCompras_files\slick.min.css" />
+    <Content Include="Views\HistorialCompras_files\style.css" />
+    <Content Include="Views\HistorialCompras_files\sweetalert.css" />
+    <Content Include="Views\HistorySalesC.aspx" />
+    <Content Include="Views\img\ace.png" />
+    <Content Include="Views\img\aconcagua.png" />
+    <Content Include="Views\img\agente.jpg" />
+    <Content Include="Views\img\agentebcp.PNG" />
+    <Content Include="Views\img\airplane.png" />
+    <Content Include="Views\img\altomayo.png" />
+    <Content Include="Views\img\americanexpresspayu2.png" />
+    <Content Include="Views\img\arroz_faraon.png" />
+    <Content Include="Views\img\ARVERJACOSTEÑO.png" />
+    <Content Include="Views\img\atun.png" />
+    <Content Include="Views\img\avena_ositos.png" />
+    <Content Include="Views\img\AZUCARDULFINA.png" />
+    <Content Include="Views\img\banco.png" />
+    <Content Include="Views\img\bcp123.png" />
+    <Content Include="Views\img\bcp1234.png" />
+    <Content Include="Views\img\bcpagente.jpg" />
+    <Content Include="Views\img\bcpagente1.png" />
+    <Content Include="Views\img\bcpagente123.jpg" />
+    <Content Include="Views\img\bcpbanco.png" />
+    <Content Include="Views\img\bcpbanco1.png" />
+    <Content Include="Views\img\camping.jpg" />
+    <Content Include="Views\img\checkfin.png" />
+    <Content Include="Views\img\cocinero.png" />
+    <Content Include="Views\img\colgate.png" />
+    <Content Include="Views\img\collage5.png" />
+    <Content Include="Views\img\dinersclubpayu2.png" />
+    <Content Include="Views\img\flan.png" />
+    <Content Include="Views\img\fondo.png" />
+    <Content Include="Views\img\full1.jpg" />
+    <Content Include="Views\img\galletasoda.png" />
+    <Content Include="Views\img\gelatina_universal.png" />
+    <Content Include="Views\img\hotel.png" />
+    <Content Include="Views\img\hotel10.jpg" />
+    <Content Include="Views\img\hotel2.png" />
+    <Content Include="Views\img\lienzofinal100_opt.png" />
+    <Content Include="Views\img\logosf2.png" />
+    <Content Include="Views\img\logo_visa.png" />
+    <Content Include="Views\img\lupa.jpg" />
+    <Content Include="Views\img\lupa.png" />
+    <Content Include="Views\img\lupa2.png" />
+    <Content Include="Views\img\mastercardpayu2.png" />
+    <Content Include="Views\img\molitalia.png" />
+    <Content Include="Views\img\news.png" />
+    <Content Include="Views\img\PALLAR COSTEÑO.png" />
+    <Content Include="Views\img\recibo.png" />
+    <Content Include="Views\img\avion.png" />
+    <Content Include="Views\img\ticketaereo.png" />
+    <Content Include="Views\img\top.png" />
+    <Content Include="Views\Login_files\7_Tav3rWEg4.gif" />
+    <Content Include="Views\Login_files\base.css" />
+    <Content Include="Views\Login_files\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Views\Login_files\kendo.bootstrap.min.css" />
+    <Content Include="Views\Login_files\kendo.common.min.css" />
+    <Content Include="Views\Login_files\login.css" />
+    <Content Include="Views\Login_files\login_button%281%29.html" />
+    <Content Include="Views\Login_files\login_button.html" />
+    <Content Include="Views\Login_files\logo.png" />
+    <Content Include="Views\Login_files\pO2d5bFWS8j.png" />
+    <Content Include="Views\Login_files\ProgressAnimation.gif" />
+    <Content Include="Views\Login_files\sitebase1.css" />
+    <Content Include="Views\Login_files\__Bz3h5RzMx.html" />
+    <Content Include="Views\MenuBackend.aspx" />
+    <Content Include="Views\MyShopping.aspx" />
+    <Content Include="Views\myshopping_files\a2e080cf2241b0ba7c11145c094867c3.jpg" />
+    <Content Include="Views\myshopping_files\all.css" />
+    <Content Include="Views\myshopping_files\animate.css" />
+    <Content Include="Views\myshopping_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\myshopping_files\bootstrap-datepicker.js" />
+    <Content Include="Views\myshopping_files\bootstrap.css" />
+    <Content Include="Views\myshopping_files\bootstrap.js" />
+    <Content Include="Views\myshopping_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\myshopping_files\Chart.js" />
+    <Content Include="Views\myshopping_files\chosen.css" />
+    <Content Include="Views\myshopping_files\chosen.js" />
+    <Content Include="Views\myshopping_files\croppie.css" />
+    <Content Include="Views\myshopping_files\croppie.js" />
+    <Content Include="Views\myshopping_files\css.css" />
+    <Content Include="Views\myshopping_files\datatables.js" />
+    <Content Include="Views\myshopping_files\datepicker3.css" />
+    <Content Include="Views\myshopping_files\daterangepicker-bs3.css" />
+    <Content Include="Views\myshopping_files\font-awesome.css" />
+    <Content Include="Views\myshopping_files\inspinia.js" />
+    <Content Include="Views\myshopping_files\jasny-bootstrap.css" />
+    <Content Include="Views\myshopping_files\jasny-bootstrap.js" />
+    <Content Include="Views\myshopping_files\jquery-3.js" />
+    <Content Include="Views\myshopping_files\jquery.js" />
+    <Content Include="Views\myshopping_files\jquery_002.js" />
+    <Content Include="Views\myshopping_files\jquery_003.js" />
+    <Content Include="Views\myshopping_files\jquery_004.js" />
+    <Content Include="Views\myshopping_files\jquery_005.js" />
+    <Content Include="Views\myshopping_files\jquery_006.js" />
+    <Content Include="Views\myshopping_files\jquery_007.js" />
+    <Content Include="Views\myshopping_files\jquery_008.js" />
+    <Content Include="Views\myshopping_files\jquery_009.js" />
+    <Content Include="Views\myshopping_files\jquery_010.js" />
+    <Content Include="Views\myshopping_files\jquery_011.js" />
+    <Content Include="Views\myshopping_files\ladda-themeless.css" />
+    <Content Include="Views\myshopping_files\logo.png" />
+    <Content Include="Views\myshopping_files\pace.js" />
+    <Content Include="Views\myshopping_files\peity-demo.js" />
+    <Content Include="Views\myshopping_files\style.css" />
+    <Content Include="Views\myshopping_files\sweetalert.css" />
+    <Content Include="Views\myshopping_files\sweetalert.js" />
+    <Content Include="Views\News.aspx" />
+    <Content Include="Views\NewsC.aspx" />
+    <Content Include="Views\NotificationC.aspx" />
+    <Content Include="Views\Pagos.aspx" />
+    <Content Include="Views\Menu.aspx" />
+    <Content Include="Resources\Images\comisiones.png" />
+    <Content Include="Resources\Images\nuevo.png" />
+    <Content Include="Resources\Images\Payments.png" />
+    <Content Include="Resources\Images\profile.png" />
+    <Content Include="Resources\Images\recibo.png" />
+    <Content Include="Resources\Images\redes.png" />
+    <Content Include="Resources\Images\shop3.svg" />
+    <Content Include="Views\CommissionsData.aspx" />
+    <Content Include="Views\ContractIs_archivos\colorschememapping.xml" />
+    <Content Include="Views\ContractIs_archivos\filelist.xml" />
+    <Content Include="Views\ContractIs_archivos\header.htm" />
+    <Content Include="Views\ContractIs_archivos\image001.png" />
+    <Content Include="Views\ContractIs_archivos\image002.png" />
+    <Content Include="Views\ContractIs_archivos\image003.png" />
+    <Content Include="Views\ContractIs_archivos\image004.png" />
+    <Content Include="Views\ContractIs_archivos\image005.png" />
+    <Content Include="Views\ContractIs_archivos\image006.png" />
+    <Content Include="Views\ContractIs_archivos\image007.png" />
+    <Content Include="Views\ContractIs_archivos\image008.png" />
+    <Content Include="Views\ContractIs_archivos\image009.png" />
+    <Content Include="Views\ContractIs_archivos\image010.png" />
+    <Content Include="Views\ContractIs_archivos\image011.png" />
+    <Content Include="Views\ContractIs_archivos\image012.png" />
+    <Content Include="Views\ContractIs_archivos\image013.png" />
+    <Content Include="Views\ContractIs_archivos\image014.png" />
+    <Content Include="Views\ContractIs_archivos\image015.png" />
+    <Content Include="Views\ContractIs_archivos\image016.png" />
+    <Content Include="Views\Css\all.css" />
+    <Content Include="Views\Css\animate.css" />
+    <Content Include="Views\Css\bootstrap.css" />
+    <Content Include="Views\Css\css.css" />
+    <Content Include="Views\Css\StyleIndex.css" />
+    <Content Include="Views\Css\StyleLoader.css" />
+    <Content Include="Views\Css\styleLoaderOn.css" />
+    <Content Include="Views\img\clickhere.png" />
+    <Content Include="Views\img\imgclub.jpg" />
+    <Content Include="Views\img\lienzofinal100.png" />
+    <Content Include="Views\img\lienzofinalfinal.png" />
+    <Content Include="Views\img\logosf.png" />
+    <Content Include="Views\img\modos.png" />
+    <Content Include="Views\img\novologo.png" />
+    <Content Include="Views\img\oficinavirtualsol33.png" />
+    <Content Include="Views\img\shieldir.png" />
+    <Content Include="Views\IndexData.aspx" />
+    <Content Include="Views\pagos_files\bank_4_1001_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1005_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1006_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1011_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1024_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1025_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_8250_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_8324_1.jpg" />
+    <Content Include="Views\pagos_files\blank.gif" />
+    <Content Include="Views\pagos_files\BrandExpress5155.png" />
+    <Content Include="Views\pagos_files\bullet-1.jpg" />
+    <Content Include="Views\pagos_files\bullet-2.jpg" />
+    <Content Include="Views\pagos_files\bullet-3.jpg" />
+    <Content Include="Views\pagos_files\bullet-4.jpg" />
+    <Content Include="Views\pagos_files\common.min-4.24.6.0.css" />
+    <Content Include="Views\pagos_files\font-awesome.min.css" />
+    <Content Include="Views\pagos_files\fonts.css" />
+    <Content Include="Views\pagos_files\icon-btn-banca-internet.png" />
+    <Content Include="Views\pagos_files\loading30.gif" />
+    <Content Include="Views\pagos_files\logo_safetypay.png" />
+    <Content Include="Views\pagos_files\print_per.min.css" />
+    <Content Include="Views\pagos_files\saved_resource.html" />
+    <Content Include="Views\pagos_files\slick.min.css" />
+    <Content Include="Views\pagos_files\styles_per.min-4.25.5.0.css" />
+    <Content Include="Views\PayDeposito.aspx" />
+    <Content Include="Views\PayDeposito2.aspx" />
+    <Content Include="Views\PayDeposito3.aspx" />
+    <Content Include="Views\PayDepositoQuote.aspx" />
+    <Content Include="Views\Payments.aspx" />
+    <Content Include="Views\PaymentsData.aspx" />
+    <Content Include="Views\PayOnLine.aspx" />
+    <Content Include="Views\PayQuote.aspx" />
+    <Content Include="Views\PayRegisterControllers.aspx" />
+    <Content Include="Views\PayRegisterExoneration.aspx" />
+    <Content Include="Views\PaysDefault.aspx" />
+    <Content Include="Views\PaysDefaultC.aspx" />
+    <Content Include="Views\PayServices.aspx" />
+    <Content Include="Views\PayServices2.aspx" />
+    <Content Include="Views\PayServicesController.aspx" />
+    <Content Include="Views\PayType.aspx" />
+    <Content Include="Views\PenaltyC.aspx" />
+    <Content Include="Views\Politics.aspx" />
+    <Content Include="Views\PoliticsKit.aspx" />
+    <Content Include="Views\PostRegister.aspx" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\a2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\americanexpresspayu2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\b2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\banca-por-internet-safetypay-nuevo.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\BANCOS-PAGO-EN-EFECTIVO.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\bootstrap.min.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\buffet2c.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\buscador-lupa1.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\carritodecompras.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\cerrar.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\cerrar_suboffers_cupon.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\CssProcesoCompra.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\cuponidadlogonuevo.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\d2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\dinersclubpayu2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\e2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\entrar.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\entrar_cuponidad.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\entre2b.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\f%281%29.txt" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\f.txt" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\f2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\fulldays2018.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\g2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_casa.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_close2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_grupo_republica.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_reloj.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_sobre.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_telefono.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_whatsapp_home.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ingresar_cuponidad_cupon.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ingresar_cuponidad_popup.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-confirm.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.10.3.custom2.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LibroReclamacionesIcono.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LogoLaRep.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LogoLib.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LogoPop.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\logo_visa.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\lupa_buscador.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\masterBootStyle.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\mastercardpayu2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\miscupones.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\moneda.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ofertacineplanet.jpg" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDKStyles.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\PagoEEfectivo.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\PagoETransferencia.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\styleshome.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\stylesmenumobile.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\styles_menu.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\suscribirme_cupon_cuponidad.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\trnHszv6jVd.html" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\vainilla-js-carousel.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\webPushAnalytics.html" />
+    <Content Include="Views\ReceiptsUser.aspx" />
+    <Content Include="Views\ReceiptsUserC.aspx" />
+    <Content Include="Views\red_files\a2e080cf2241b0ba7c11145c094867c3.jpg" />
+    <Content Include="Views\red_files\all.css" />
+    <Content Include="Views\red_files\animate.css" />
+    <Content Include="Views\red_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\red_files\bootstrap-datepicker.js" />
+    <Content Include="Views\red_files\bootstrap.css" />
+    <Content Include="Views\red_files\bootstrap.js" />
+    <Content Include="Views\red_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\red_files\Chart.js" />
+    <Content Include="Views\red_files\chosen.css" />
+    <Content Include="Views\red_files\chosen.js" />
+    <Content Include="Views\red_files\comisiones.png" />
+    <Content Include="Views\red_files\croppie.css" />
+    <Content Include="Views\red_files\croppie.js" />
+    <Content Include="Views\red_files\css.css" />
+    <Content Include="Views\red_files\datatables.js" />
+    <Content Include="Views\red_files\datepicker3.css" />
+    <Content Include="Views\red_files\daterangepicker-bs3.css" />
+    <Content Include="Views\red_files\font-awesome.css" />
+    <Content Include="Views\red_files\inspinia.js" />
+    <Content Include="Views\red_files\jasny-bootstrap.css" />
+    <Content Include="Views\red_files\jasny-bootstrap.js" />
+    <Content Include="Views\red_files\jquery-3.js" />
+    <Content Include="Views\red_files\jquery.css" />
+    <Content Include="Views\red_files\jquery.js" />
+    <Content Include="Views\red_files\jquery_002.js" />
+    <Content Include="Views\red_files\jquery_003.js" />
+    <Content Include="Views\red_files\jquery_004.js" />
+    <Content Include="Views\red_files\jquery_005.js" />
+    <Content Include="Views\red_files\jquery_006.js" />
+    <Content Include="Views\red_files\jquery_007.js" />
+    <Content Include="Views\red_files\jquery_008.js" />
+    <Content Include="Views\red_files\jquery_009.js" />
+    <Content Include="Views\red_files\jquery_010.js" />
+    <Content Include="Views\red_files\jquery_011.js" />
+    <Content Include="Views\red_files\jquery_012.js" />
+    <Content Include="Views\red_files\ladda-themeless.css" />
+    <Content Include="Views\red_files\logo.png" />
+    <Content Include="Views\red_files\nuevo.png" />
+    <Content Include="Views\red_files\oficina.png" />
+    <Content Include="Views\red_files\pace.js" />
+    <Content Include="Views\red_files\peity-demo.js" />
+    <Content Include="Views\red_files\publicaciones.png" />
+    <Content Include="Views\red_files\redes.png" />
+    <Content Include="Views\red_files\style.css" />
+    <Content Include="Views\red_files\sweetalert.css" />
+    <Content Include="Views\red_files\sweetalert.js" />
+    <Content Include="Views\red_files\tienda.png" />
+    <Content Include="Views\Referred.aspx" />
+    <Content Include="Views\RegisterData.aspx" />
+    <Content Include="Views\RegisterNews.aspx" />
+    <Content Include="Views\RegisterRef.aspx" />
+    <Content Include="Views\Script\BListPartner.js" />
+    <Content Include="Views\Script\bootstrap.js" />
+    <Content Include="Views\Script\Comission.js" />
+    <Content Include="Views\Script\ComissionList.js" />
+    <Content Include="Views\Script\DocumentPdf.js" />
+    <Content Include="Views\Script\FileSaver.js" />
+    <Content Include="Views\Script\html2pdf.js" />
+    <Content Include="Views\Script\jquery-3.js" />
+    <Content Include="Views\Script\jquery.js" />
+    <Content Include="Views\Script\jquery.min.js" />
+    <Content Include="Views\Script\jquery.wordexport.js" />
+    <Content Include="Views\Script\jquery.wordexport_cer.js" />
+    <Content Include="Views\Script\Notification.js" />
+    <Content Include="Views\Script\PaysDefault.js" />
+    <Content Include="Views\Script\ReceiptsUser.js" />
+    <Content Include="Views\Script\jspdf.debug.js" />
+    <Content Include="Views\Script\Script.js" />
+    <Content Include="Views\Commissions.aspx" />
+    <Content Include="Views\Css\Style.css" />
+    <Content Include="Views\Edit.aspx" />
+    <Content Include="Views\editar_files\all.css" />
+    <Content Include="Views\editar_files\animate.css" />
+    <Content Include="Views\editar_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\editar_files\bootstrap-datepicker.js" />
+    <Content Include="Views\editar_files\bootstrap.css" />
+    <Content Include="Views\editar_files\bootstrap.js" />
+    <Content Include="Views\editar_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\editar_files\Chart.js" />
+    <Content Include="Views\editar_files\chosen.css" />
+    <Content Include="Views\editar_files\chosen.js" />
+    <Content Include="Views\editar_files\croppie.css" />
+    <Content Include="Views\editar_files\croppie.js" />
+    <Content Include="Views\editar_files\css.css" />
+    <Content Include="Views\editar_files\datatables.js" />
+    <Content Include="Views\editar_files\datepicker3.css" />
+    <Content Include="Views\editar_files\daterangepicker-bs3.css" />
+    <Content Include="Views\editar_files\font-awesome.css" />
+    <Content Include="Views\editar_files\inspinia.js" />
+    <Content Include="Views\editar_files\jasny-bootstrap.css" />
+    <Content Include="Views\editar_files\jasny-bootstrap.js" />
+    <Content Include="Views\editar_files\jquery-3.js" />
+    <Content Include="Views\editar_files\jquery.js" />
+    <Content Include="Views\editar_files\jquery_002.js" />
+    <Content Include="Views\editar_files\jquery_003.js" />
+    <Content Include="Views\editar_files\jquery_004.js" />
+    <Content Include="Views\editar_files\jquery_005.js" />
+    <Content Include="Views\editar_files\jquery_006.js" />
+    <Content Include="Views\editar_files\jquery_007.js" />
+    <Content Include="Views\editar_files\jquery_008.js" />
+    <Content Include="Views\editar_files\jquery_009.js" />
+    <Content Include="Views\editar_files\jquery_010.js" />
+    <Content Include="Views\editar_files\jquery_011.js" />
+    <Content Include="Views\editar_files\ladda-themeless.css" />
+    <Content Include="Views\editar_files\pace.js" />
+    <Content Include="Views\editar_files\peity-demo.js" />
+    <Content Include="Views\editar_files\style.css" />
+    <Content Include="Views\editar_files\sweetalert.css" />
+    <Content Include="Views\editar_files\sweetalert.js" />
+    <Content Include="Views\Error.aspx" />
+    <Content Include="Views\home_files\5.png" />
+    <Content Include="Views\home_files\a2e080cf2241b0ba7c11145c094867c3.jpg" />
+    <Content Include="Views\home_files\animate.css" />
+    <Content Include="Views\home_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\home_files\banner.png" />
+    <Content Include="Views\home_files\bootstrap-datepicker.js" />
+    <Content Include="Views\home_files\bootstrap.css" />
+    <Content Include="Views\home_files\bootstrap.js" />
+    <Content Include="Views\home_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\home_files\Chart.js" />
+    <Content Include="Views\home_files\chosen.css" />
+    <Content Include="Views\home_files\chosen.js" />
+    <Content Include="Views\home_files\comisiones.png" />
+    <Content Include="Views\home_files\datatables.js" />
+    <Content Include="Views\home_files\datepicker3.css" />
+    <Content Include="Views\home_files\daterangepicker-bs3.css" />
+    <Content Include="Views\home_files\font-awesome.css" />
+    <Content Include="Views\home_files\inspinia.js" />
+    <Content Include="Views\home_files\jasny-bootstrap.css" />
+    <Content Include="Views\home_files\jasny-bootstrap.js" />
+    <Content Include="Views\home_files\jquery-3.js" />
+    <Content Include="Views\home_files\jquery.js" />
+    <Content Include="Views\home_files\jquery_002.js" />
+    <Content Include="Views\home_files\jquery_003.js" />
+    <Content Include="Views\home_files\jquery_004.js" />
+    <Content Include="Views\home_files\jquery_005.js" />
+    <Content Include="Views\home_files\jquery_006.js" />
+    <Content Include="Views\home_files\jquery_007.js" />
+    <Content Include="Views\home_files\jquery_008.js" />
+    <Content Include="Views\home_files\ladda-themeless.css" />
+    <Content Include="Views\home_files\nuevo.png" />
+    <Content Include="Views\home_files\pace.js" />
+    <Content Include="Views\home_files\peity-demo.js" />
+    <Content Include="Views\home_files\publicaciones.png" />
+    <Content Include="Views\home_files\redes.png" />
+    <Content Include="Views\home_files\slick.css" />
+    <Content Include="Views\home_files\slick.js" />
+    <Content Include="Views\home_files\style.css" />
+    <Content Include="Views\home_files\tienda.png" />
+    <Content Include="Views\img\logo.png" />
+    <Content Include="Views\img\logo2.jpg" />
+    <Content Include="Views\img\logosolcito.png" />
+    <Content Include="Views\img\oficinavirtualsol.png" />
+    <Content Include="Views\ingresar_files\animate.css" />
+    <Content Include="Views\ingresar_files\bootstrap.css" />
+    <Content Include="Views\ingresar_files\bootstrap.js" />
+    <Content Include="Views\ingresar_files\css.css" />
+    <Content Include="Views\ingresar_files\font-awesome.css" />
+    <Content Include="Views\ingresar_files\jquery-3.js" />
+    <Content Include="Views\ingresar_files\ladda-themeless.css" />
+    <Content Include="Views\ingresar_files\ladda.js" />
+    <Content Include="Views\ingresar_files\ladda_002.js" />
+    <Content Include="Views\ingresar_files\spin.js" />
+    <Content Include="Views\ingresar_files\style.css" />
+    <Content Include="Views\Login.aspx" />
+    <Content Include="Views\postRegistro_files\all.css" />
+    <Content Include="Views\postRegistro_files\animate.css" />
+    <Content Include="Views\postRegistro_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\postRegistro_files\bootstrap-datepicker.js" />
+    <Content Include="Views\postRegistro_files\bootstrap.css" />
+    <Content Include="Views\postRegistro_files\bootstrap.js" />
+    <Content Include="Views\postRegistro_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\postRegistro_files\Chart.js" />
+    <Content Include="Views\postRegistro_files\chosen.css" />
+    <Content Include="Views\postRegistro_files\chosen.js" />
+    <Content Include="Views\postRegistro_files\croppie.css" />
+    <Content Include="Views\postRegistro_files\croppie.js" />
+    <Content Include="Views\postRegistro_files\css.css" />
+    <Content Include="Views\postRegistro_files\datatables.js" />
+    <Content Include="Views\postRegistro_files\datepicker3.css" />
+    <Content Include="Views\postRegistro_files\daterangepicker-bs3.css" />
+    <Content Include="Views\postRegistro_files\font-awesome.css" />
+    <Content Include="Views\postRegistro_files\inspinia.js" />
+    <Content Include="Views\postRegistro_files\jasny-bootstrap.css" />
+    <Content Include="Views\postRegistro_files\jasny-bootstrap.js" />
+    <Content Include="Views\postRegistro_files\jquery-3.js" />
+    <Content Include="Views\postRegistro_files\jquery.js" />
+    <Content Include="Views\postRegistro_files\jquery_002.js" />
+    <Content Include="Views\postRegistro_files\jquery_003.js" />
+    <Content Include="Views\postRegistro_files\jquery_004.js" />
+    <Content Include="Views\postRegistro_files\jquery_005.js" />
+    <Content Include="Views\postRegistro_files\jquery_006.js" />
+    <Content Include="Views\postRegistro_files\jquery_007.js" />
+    <Content Include="Views\postRegistro_files\jquery_008.js" />
+    <Content Include="Views\postRegistro_files\jquery_009.js" />
+    <Content Include="Views\postRegistro_files\jquery_010.js" />
+    <Content Include="Views\postRegistro_files\jquery_011.js" />
+    <Content Include="Views\postRegistro_files\ladda-themeless.css" />
+    <Content Include="Views\postRegistro_files\pace.js" />
+    <Content Include="Views\postRegistro_files\peity-demo.js" />
+    <Content Include="Views\postRegistro_files\style.css" />
+    <Content Include="Views\postRegistro_files\sweetalert.css" />
+    <Content Include="Views\postRegistro_files\sweetalert.js" />
+    <Content Include="Views\Red.aspx" />
+    <Content Include="Views\RedData.aspx" />
+    <Content Include="Views\Register.aspx" />
+    <Content Include="Views\registro_files\a2e080cf2241b0ba7c11145c094867c3.jpg" />
+    <Content Include="Views\registro_files\all.css" />
+    <Content Include="Views\registro_files\animate.css" />
+    <Content Include="Views\registro_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\registro_files\banner-nuevo.png" />
+    <Content Include="Views\registro_files\bootstrap-datepicker.js" />
+    <Content Include="Views\registro_files\bootstrap.css" />
+    <Content Include="Views\registro_files\bootstrap.js" />
+    <Content Include="Views\registro_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\registro_files\Chart.js" />
+    <Content Include="Views\registro_files\chosen.css" />
+    <Content Include="Views\registro_files\chosen.js" />
+    <Content Include="Views\registro_files\croppie.css" />
+    <Content Include="Views\registro_files\croppie.js" />
+    <Content Include="Views\registro_files\css.css" />
+    <Content Include="Views\registro_files\datatables.js" />
+    <Content Include="Views\registro_files\datepicker3.css" />
+    <Content Include="Views\registro_files\daterangepicker-bs3.css" />
+    <Content Include="Views\registro_files\font-awesome.css" />
+    <Content Include="Views\registro_files\inspinia.js" />
+    <Content Include="Views\registro_files\jasny-bootstrap.css" />
+    <Content Include="Views\registro_files\jasny-bootstrap.js" />
+    <Content Include="Views\registro_files\jquery-3.js" />
+    <Content Include="Views\registro_files\jquery.js" />
+    <Content Include="Views\registro_files\jquery_002.js" />
+    <Content Include="Views\registro_files\jquery_003.js" />
+    <Content Include="Views\registro_files\jquery_004.js" />
+    <Content Include="Views\registro_files\jquery_005.js" />
+    <Content Include="Views\registro_files\jquery_006.js" />
+    <Content Include="Views\registro_files\jquery_007.js" />
+    <Content Include="Views\registro_files\jquery_008.js" />
+    <Content Include="Views\registro_files\jquery_009.js" />
+    <Content Include="Views\registro_files\jquery_010.js" />
+    <Content Include="Views\registro_files\jquery_011.js" />
+    <Content Include="Views\registro_files\ladda-themeless.css" />
+    <Content Include="Views\registro_files\nuevo_socio.png" />
+    <Content Include="Views\registro_files\pace.js" />
+    <Content Include="Views\registro_files\peity-demo.js" />
+    <Content Include="Views\registro_files\socio.js" />
+    <Content Include="Views\registro_files\style.css" />
+    <Content Include="Views\registro_files\sweetalert.css" />
+    <Content Include="Views\registro_files\sweetalert.js" />
+    <Content Include="Views\comisiones_files\all.css" />
+    <Content Include="Views\comisiones_files\animate.css" />
+    <Content Include="Views\comisiones_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\comisiones_files\bootstrap-datepicker.js" />
+    <Content Include="Views\comisiones_files\bootstrap.css" />
+    <Content Include="Views\comisiones_files\bootstrap.js" />
+    <Content Include="Views\comisiones_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\comisiones_files\Chart.js" />
+    <Content Include="Views\comisiones_files\chosen.css" />
+    <Content Include="Views\comisiones_files\chosen.js" />
+    <Content Include="Views\comisiones_files\croppie.css" />
+    <Content Include="Views\comisiones_files\croppie.js" />
+    <Content Include="Views\comisiones_files\css.css" />
+    <Content Include="Views\comisiones_files\datatables.js" />
+    <Content Include="Views\comisiones_files\datepicker3.css" />
+    <Content Include="Views\comisiones_files\daterangepicker-bs3.css" />
+    <Content Include="Views\comisiones_files\font-awesome.css" />
+    <Content Include="Views\comisiones_files\inspinia.js" />
+    <Content Include="Views\comisiones_files\jasny-bootstrap.css" />
+    <Content Include="Views\comisiones_files\jasny-bootstrap.js" />
+    <Content Include="Views\comisiones_files\ladda-themeless.css" />
+    <Content Include="Views\comisiones_files\pace.js" />
+    <Content Include="Views\comisiones_files\peity-demo.js" />
+    <Content Include="Views\comisiones_files\style.css" />
+    <Content Include="Views\comisiones_files\sweetalert.css" />
+    <Content Include="Views\comisiones_files\sweetalert.js" />
+    <Content Include="Views\Index.aspx" />
+    <Content Include="Views\Script\Script2.js" />
+    <Content Include="Views\Script\ScriptActivation.js" />
+    <Content Include="Views\Script\ScriptAddMembership.js" />
+    <Content Include="Views\Script\ScriptAddMembPagos.js" />
+    <Content Include="Views\Script\ScriptBPayServices.js" />
+    <Content Include="Views\Script\ScriptCommissions.js" />
+    <Content Include="Views\Script\ScriptEdit.js" />
+    <Content Include="Views\Script\ScriptEditNews.js" />
+    <Content Include="Views\Script\ScriptHistorySales.js" />
+    <Content Include="Views\Script\ScriptNews.js" />
+    <Content Include="Views\Script\ScriptPagares.js" />
+    <Content Include="Views\Script\ScriptPayments.js" />
+    <Content Include="Views\Script\ScriptRegister.js" />
+    <Content Include="Views\Script\ScriptTransactionsDetail.js" />
+    <Content Include="Views\Script\ScriptTravel.js" />
+    <Content Include="Views\Script\ScriptTravelB.js" />
+    <Content Include="Views\Script\ScriptTravelBenefits.js" />
+    <Content Include="Views\Script\ScriptUser.js" />
+    <Content Include="Views\Script\ScriptUserQuote.js" />
+    <Content Include="Views\Script\UserQuote.js" />
+    <Content Include="Views\Script\Users.js" />
+    <Content Include="Views\SignOutC.aspx" />
+    <Content Include="Views\Sponsored.aspx" />
+    <Content Include="Views\SponsoredData.aspx" />
+    <Content Include="Views\Sponsored_files\a2e080cf2241b0ba7c11145c094867c3.jpg" />
+    <Content Include="Views\Sponsored_files\all.css" />
+    <Content Include="Views\Sponsored_files\animate.css" />
+    <Content Include="Views\Sponsored_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\Sponsored_files\bootstrap-datepicker.js" />
+    <Content Include="Views\Sponsored_files\bootstrap.css" />
+    <Content Include="Views\Sponsored_files\bootstrap.js" />
+    <Content Include="Views\Sponsored_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\Sponsored_files\Chart.js" />
+    <Content Include="Views\Sponsored_files\chosen.css" />
+    <Content Include="Views\Sponsored_files\chosen.js" />
+    <Content Include="Views\Sponsored_files\comisiones.png" />
+    <Content Include="Views\Sponsored_files\croppie.css" />
+    <Content Include="Views\Sponsored_files\croppie.js" />
+    <Content Include="Views\Sponsored_files\css.css" />
+    <Content Include="Views\Sponsored_files\datatables.js" />
+    <Content Include="Views\Sponsored_files\datepicker3.css" />
+    <Content Include="Views\Sponsored_files\daterangepicker-bs3.css" />
+    <Content Include="Views\Sponsored_files\font-awesome.css" />
+    <Content Include="Views\Sponsored_files\inspinia.js" />
+    <Content Include="Views\Sponsored_files\jasny-bootstrap.css" />
+    <Content Include="Views\Sponsored_files\jasny-bootstrap.js" />
+    <Content Include="Views\Sponsored_files\jquery-3.js" />
+    <Content Include="Views\Sponsored_files\jquery.js" />
+    <Content Include="Views\Sponsored_files\jquery_002.js" />
+    <Content Include="Views\Sponsored_files\jquery_003.js" />
+    <Content Include="Views\Sponsored_files\jquery_004.js" />
+    <Content Include="Views\Sponsored_files\jquery_005.js" />
+    <Content Include="Views\Sponsored_files\jquery_006.js" />
+    <Content Include="Views\Sponsored_files\jquery_007.js" />
+    <Content Include="Views\Sponsored_files\jquery_008.js" />
+    <Content Include="Views\Sponsored_files\jquery_009.js" />
+    <Content Include="Views\Sponsored_files\jquery_010.js" />
+    <Content Include="Views\Sponsored_files\jquery_011.js" />
+    <Content Include="Views\Sponsored_files\ladda-themeless.css" />
+    <Content Include="Views\Sponsored_files\logo.png" />
+    <Content Include="Views\Sponsored_files\nuevo.png" />
+    <Content Include="Views\Sponsored_files\oficina.png" />
+    <Content Include="Views\Sponsored_files\pace.js" />
+    <Content Include="Views\Sponsored_files\peity-demo.js" />
+    <Content Include="Views\Sponsored_files\publicaciones.png" />
+    <Content Include="Views\Sponsored_files\redes.png" />
+    <Content Include="Views\Sponsored_files\style.css" />
+    <Content Include="Views\Sponsored_files\sweetalert.css" />
+    <Content Include="Views\Sponsored_files\sweetalert.js" />
+    <Content Include="Views\Sponsored_files\tienda.png" />
+    <Content Include="Views\Store.aspx" />
+    <Content Include="Views\tienda_files\320x320.png" />
+    <Content Include="Views\tienda_files\a2e080cf2241b0ba7c11145c094867c3.jpg" />
+    <Content Include="Views\tienda_files\aceite-oliva.jpg" />
+    <Content Include="Views\tienda_files\aceite-sachainchi.jpg" />
+    <Content Include="Views\tienda_files\aceite_copaiba.jpg" />
+    <Content Include="Views\tienda_files\acondicionador_natural.jpg" />
+    <Content Include="Views\tienda_files\algarrobina.jpg" />
+    <Content Include="Views\tienda_files\all.css" />
+    <Content Include="Views\tienda_files\animate.css" />
+    <Content Include="Views\tienda_files\awesome-bootstrap-checkbox.css" />
+    <Content Include="Views\tienda_files\bebidas_alcachofa.jpg" />
+    <Content Include="Views\tienda_files\bebidas_alcamax.jpg" />
+    <Content Include="Views\tienda_files\bebidas_axiomax.jpg" />
+    <Content Include="Views\tienda_files\bebidas_canchalagua.jpg" />
+    <Content Include="Views\tienda_files\bebidas_cerefort.jpg" />
+    <Content Include="Views\tienda_files\bebidas_chikimiel.jpg" />
+    <Content Include="Views\tienda_files\bebidas_chikinoni.jpg" />
+    <Content Include="Views\tienda_files\bebidas_coln_cleanse.jpg" />
+    <Content Include="Views\tienda_files\bebidas_desencil.jpg" />
+    <Content Include="Views\tienda_files\bebidas_dral.jpg" />
+    <Content Include="Views\tienda_files\bebidas_graviola.jpg" />
+    <Content Include="Views\tienda_files\bebidas_hergasol.jpg" />
+    <Content Include="Views\tienda_files\bebidas_hfem.jpg" />
+    <Content Include="Views\tienda_files\bebidas_mintus.jpg" />
+    <Content Include="Views\tienda_files\bebidas_noni.jpg" />
+    <Content Include="Views\tienda_files\bebidas_nonimax.jpg" />
+    <Content Include="Views\tienda_files\bebidas_pacifis.jpg" />
+    <Content Include="Views\tienda_files\bebidas_pencadetuna.jpg" />
+    <Content Include="Views\tienda_files\bebidas_propoleos.jpg" />
+    <Content Include="Views\tienda_files\bebidas_proximol.jpg" />
+    <Content Include="Views\tienda_files\bebidas_rixiomax.jpg" />
+    <Content Include="Views\tienda_files\bebidas_sabila.jpg" />
+    <Content Include="Views\tienda_files\bebidas_sabilamax.jpg" />
+    <Content Include="Views\tienda_files\bebidas_saviadeplatano.jpg" />
+    <Content Include="Views\tienda_files\bebidas_unagato.jpg" />
+    <Content Include="Views\tienda_files\bebidas_yacon.jpg" />
+    <Content Include="Views\tienda_files\bootstrap-datepicker.js" />
+    <Content Include="Views\tienda_files\bootstrap.css" />
+    <Content Include="Views\tienda_files\bootstrap.js" />
+    <Content Include="Views\tienda_files\bootstrap3-typeahead.js" />
+    <Content Include="Views\tienda_files\btn-adicional.png" />
+    <Content Include="Views\tienda_files\btn-autoconsumo-active.png" />
+    <Content Include="Views\tienda_files\btn-upgrade.png" />
+    <Content Include="Views\tienda_files\capsulas-alcamax-knn-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-cartilago-de-tiburon-ccamu-camu-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-cerefort-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-colageno-doblemente-hidrolizado-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-colageno-x120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-ganoderma-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-garcinia-cafe-verde-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-hfem-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-levadura-de-cerveza-cmaca-negra-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-maca-x-120-unid-premium1.png" />
+    <Content Include="Views\tienda_files\capsulas-moringa-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-noni-max-x-120-unid-premium-line-knn.png" />
+    <Content Include="Views\tienda_files\capsulas-pacifis-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-proximol-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\capsulas-te-verde-x-120-unid-premium.png" />
+    <Content Include="Views\tienda_files\caps_alcachofa.jpg" />
+    <Content Include="Views\tienda_files\caps_alcamax.jpg" />
+    <Content Include="Views\tienda_files\caps_cartilago.jpg" />
+    <Content Include="Views\tienda_files\caps_cerefort.jpg" />
+    <Content Include="Views\tienda_files\caps_chancapiedra.jpg" />
+    <Content Include="Views\tienda_files\caps_colageno.jpg" />
+    <Content Include="Views\tienda_files\caps_curcuma.jpg" />
+    <Content Include="Views\tienda_files\caps_ganoderma.jpg" />
+    <Content Include="Views\tienda_files\caps_garcinia.jpg" />
+    <Content Include="Views\tienda_files\caps_graviola.jpg" />
+    <Content Include="Views\tienda_files\caps_hervaril.jpg" />
+    <Content Include="Views\tienda_files\caps_hfem.jpg" />
+    <Content Include="Views\tienda_files\caps_laximol.jpg" />
+    <Content Include="Views\tienda_files\caps_levadura.jpg" />
+    <Content Include="Views\tienda_files\caps_maca.jpg" />
+    <Content Include="Views\tienda_files\caps_macanegra.jpg" />
+    <Content Include="Views\tienda_files\caps_macaroja.jpg" />
+    <Content Include="Views\tienda_files\caps_moringa.jpg" />
+    <Content Include="Views\tienda_files\caps_nonimax.jpg" />
+    <Content Include="Views\tienda_files\caps_pacifis.jpg" />
+    <Content Include="Views\tienda_files\caps_proximol.jpg" />
+    <Content Include="Views\tienda_files\caps_rixiomax.jpg" />
+    <Content Include="Views\tienda_files\caps_slimmax.jpg" />
+    <Content Include="Views\tienda_files\caps_teverde.jpg" />
+    <Content Include="Views\tienda_files\caps_tigerup.jpg" />
+    <Content Include="Views\tienda_files\caps_tocosh.jpg" />
+    <Content Include="Views\tienda_files\caps_unadegato.jpg" />
+    <Content Include="Views\tienda_files\caps_yacon.jpg" />
+    <Content Include="Views\tienda_files\catalogos-de-venta.png" />
+    <Content Include="Views\tienda_files\catalogos-x-3-unidades.png" />
+    <Content Include="Views\tienda_files\Chart.js" />
+    <Content Include="Views\tienda_files\chosen.css" />
+    <Content Include="Views\tienda_files\chosen.js" />
+    <Content Include="Views\tienda_files\colageno_350.jpg" />
+    <Content Include="Views\tienda_files\colageno_doble_400g.jpg" />
+    <Content Include="Views\tienda_files\comisiones.png" />
+    <Content Include="Views\tienda_files\common.js" />
+    <Content Include="Views\tienda_files\crema_concha.jpg" />
+    <Content Include="Views\tienda_files\croppie.css" />
+    <Content Include="Views\tienda_files\croppie.js" />
+    <Content Include="Views\tienda_files\css.css" />
+    <Content Include="Views\tienda_files\datatables.js" />
+    <Content Include="Views\tienda_files\datepicker3.css" />
+    <Content Include="Views\tienda_files\daterangepicker-bs3.css" />
+    <Content Include="Views\tienda_files\energisol_jalea.jpg" />
+    <Content Include="Views\tienda_files\energisol_kids.jpg" />
+    <Content Include="Views\tienda_files\font-awesome.css" />
+    <Content Include="Views\tienda_files\inspinia.js" />
+    <Content Include="Views\tienda_files\jabonbaba.jpg" />
+    <Content Include="Views\tienda_files\jasny-bootstrap.css" />
+    <Content Include="Views\tienda_files\jasny-bootstrap.js" />
+    <Content Include="Views\tienda_files\jquery-3.js" />
+    <Content Include="Views\tienda_files\jquery.js" />
+    <Content Include="Views\tienda_files\jquery_002.js" />
+    <Content Include="Views\tienda_files\jquery_003.js" />
+    <Content Include="Views\tienda_files\jquery_004.js" />
+    <Content Include="Views\tienda_files\jquery_005.js" />
+    <Content Include="Views\tienda_files\jquery_006.js" />
+    <Content Include="Views\tienda_files\jquery_007.js" />
+    <Content Include="Views\tienda_files\jquery_008.js" />
+    <Content Include="Views\tienda_files\jquery_009.js" />
+    <Content Include="Views\tienda_files\jquery_010.js" />
+    <Content Include="Views\tienda_files\jquery_011.js" />
+    <Content Include="Views\tienda_files\ladda-themeless.css" />
+    <Content Include="Views\tienda_files\logo.png" />
+    <Content Include="Views\tienda_files\mielabeja.jpg" />
+    <Content Include="Views\tienda_files\nuevo.png" />
+    <Content Include="Views\tienda_files\oficina.png" />
+    <Content Include="Views\tienda_files\pace.js" />
+    <Content Include="Views\tienda_files\peity-demo.js" />
+    <Content Include="Views\tienda_files\propoleo_forte.jpg" />
+    <Content Include="Views\tienda_files\propoleo_kids.jpg" />
+    <Content Include="Views\tienda_files\propoleo_plus.jpg" />
+    <Content Include="Views\tienda_files\publicaciones.png" />
+    <Content Include="Views\tienda_files\redes.png" />
+    <Content Include="Views\tienda_files\revive_locion.jpg" />
+    <Content Include="Views\tienda_files\sangregrado.jpg" />
+    <Content Include="Views\tienda_files\shampoo_huito.jpg" />
+    <Content Include="Views\tienda_files\shampoo_k.jpg" />
+    <Content Include="Views\tienda_files\shampoo_unagato.jpg" />
+    <Content Include="Views\tienda_files\sindol_crema.jpg" />
+    <Content Include="Views\tienda_files\slimmax_batido.jpg" />
+    <Content Include="Views\tienda_files\style.css" />
+    <Content Include="Views\tienda_files\sweetalert.css" />
+    <Content Include="Views\tienda_files\sweetalert.js" />
+    <Content Include="Views\tienda_files\tienda.png" />
+    <Content Include="Views\tienda_files\tigerup_shot.jpg" />
+    <Content Include="Views\tienda_files\tomatodo-azul1.png" />
+    <Content Include="Views\tienda_files\tomatodo-fuxia.png" />
+    <Content Include="Views\tienda_files\tomatodo-turqueza1.png" />
+    <Content Include="Views\tienda_files\util.js" />
+    <Content Include="Views\tienda_files\vinagre_1l.jpg" />
+    <Content Include="Views\tienda_files\vinagre_500ml.jpg" />
+    <Content Include="Views\tienda_files\x_prueba_tomatodo.jpg" />
+    <Content Include="Views\TransactionC.aspx" />
+    <Content Include="Views\TransactionsDetail.aspx" />
+    <Content Include="Views\TransactionsDetailC.aspx" />
+    <Content Include="Views\TravelBenefits.aspx" />
+    <Content Include="Views\TypeChangeController.aspx" />
+    <Content Include="Views\UpdateComission.aspx" />
+    <Content Include="Views\UpdateNotifC.aspx" />
+    <Content Include="Views\Upload.aspx" />
+    <Content Include="Views\UploadTools.aspx" />
+    <Content Include="Views\UploadToolsC.aspx" />
+    <Content Include="Views\UserC.aspx" />
+    <Content Include="Views\UserNotConfirmed.aspx" />
+    <Content Include="Views\UserNotConfirmedC.aspx" />
+    <Content Include="Views\UserQuote.aspx" />
+    <Content Include="Views\UserQuoteC.aspx" />
+    <Content Include="Views\Users.aspx" />
+    <Content Include="Views\VerificationCodeC.aspx" />
+    <Content Include="Views\VerificationPayments.aspx" />
+    <Content Include="Views\VerifUpgrade.aspx" />
+    <Content Include="Views\VisorStandBy.aspx" />
+    <Content Include="Views\VysorCertificado.aspx" />
+    <Content Include="Views\VysorCertificadoSTBY.aspx" />
+    <Content Include="Views\VysorContratos.aspx" />
+    <Content Include="Views\VysorPagare.aspx" />
+    <Content Include="Views\VysorRCI.aspx" />
+    <Content Include="Views\VysorVacational.aspx" />
+    <Content Include="Views\Wallet.aspx" />
+    <Content Include="Views\WalletAmortization.aspx" />
+    <Content Include="Views\WalletC.aspx" />
+    <Content Include="Views\_DatePayInitial.aspx" />
+    <Content Include="Views\_VitualOffice.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Range.aspx.cs">
+      <DependentUpon>Range.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Range.aspx.designer.cs">
+      <DependentUpon>Range.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EmailPartner.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Views\AddMembPayWallet.aspx.cs">
+      <DependentUpon>AddMembPayWallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembPayWallet.aspx.designer.cs">
+      <DependentUpon>AddMembPayWallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembPayWalletCc.aspx.cs">
+      <DependentUpon>AddMembPayWalletCc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembPayWalletCc.aspx.designer.cs">
+      <DependentUpon>AddMembPayWalletCc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdvancePayWallet.aspx.cs">
+      <DependentUpon>AdvancePayWallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdvancePayWallet.aspx.designer.cs">
+      <DependentUpon>AdvancePayWallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BDataCorrection.aspx.cs">
+      <DependentUpon>BDataCorrection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BDataCorrection.aspx.designer.cs">
+      <DependentUpon>BDataCorrection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BDataCorrectionC.aspx.cs">
+      <DependentUpon>BDataCorrectionC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BDataCorrectionC.aspx.designer.cs">
+      <DependentUpon>BDataCorrectionC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BDepositRequest.aspx.cs">
+      <DependentUpon>BDepositRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BDepositRequest.aspx.designer.cs">
+      <DependentUpon>BDepositRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BDepositRequestC.aspx.cs">
+      <DependentUpon>BDepositRequestC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BDepositRequestC.aspx.designer.cs">
+      <DependentUpon>BDepositRequestC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bextorno.aspx.cs">
+      <DependentUpon>Bextorno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Bextorno.aspx.designer.cs">
+      <DependentUpon>Bextorno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BextornoC.aspx.cs">
+      <DependentUpon>BextornoC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BextornoC.aspx.designer.cs">
+      <DependentUpon>BextornoC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BlistExtorno.aspx.cs">
+      <DependentUpon>BlistExtorno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BlistExtorno.aspx.designer.cs">
+      <DependentUpon>BlistExtorno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BlistExtornoC.aspx.cs">
+      <DependentUpon>BlistExtornoC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BlistExtornoC.aspx.designer.cs">
+      <DependentUpon>BlistExtornoC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bonus.aspx.cs">
+      <DependentUpon>Bonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Bonus.aspx.designer.cs">
+      <DependentUpon>Bonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BonusC.aspx.cs">
+      <DependentUpon>BonusC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BonusC.aspx.designer.cs">
+      <DependentUpon>BonusC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BonusPeriod.aspx.cs">
+      <DependentUpon>BonusPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BonusPeriod.aspx.designer.cs">
+      <DependentUpon>BonusPeriod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BonusPeriodC.aspx.cs">
+      <DependentUpon>BonusPeriodC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BonusPeriodC.aspx.designer.cs">
+      <DependentUpon>BonusPeriodC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleWallett.aspx.cs">
+      <DependentUpon>ChangingScheduleWallett.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleWallett.aspx.designer.cs">
+      <DependentUpon>ChangingScheduleWallett.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleWallettC.aspx.cs">
+      <DependentUpon>ChangingScheduleWallettC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleWallettC.aspx.designer.cs">
+      <DependentUpon>ChangingScheduleWallettC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditPthotoC.aspx.cs">
+      <DependentUpon>EditPthotoC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EditPthotoC.aspx.designer.cs">
+      <DependentUpon>EditPthotoC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymendMbs.aspx.cs">
+      <DependentUpon>EndPaymendMbs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymendMbs.aspx.designer.cs">
+      <DependentUpon>EndPaymendMbs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentQuote.aspx.cs">
+      <DependentUpon>EndPaymentQuote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentQuote.aspx.designer.cs">
+      <DependentUpon>EndPaymentQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentSby.aspx.cs">
+      <DependentUpon>EndPaymentSby.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentSby.aspx.designer.cs">
+      <DependentUpon>EndPaymentSby.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentSendLater.aspx.cs">
+      <DependentUpon>EndPaymentSendLater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentSendLater.aspx.designer.cs">
+      <DependentUpon>EndPaymentSendLater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentsPostponedPay.aspx.cs">
+      <DependentUpon>EndPaymentsPostponedPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentsPostponedPay.aspx.designer.cs">
+      <DependentUpon>EndPaymentsPostponedPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentUpgrade.aspx.cs">
+      <DependentUpon>EndPaymentUpgrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentUpgrade.aspx.designer.cs">
+      <DependentUpon>EndPaymentUpgrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistorialTravelers.aspx.cs">
+      <DependentUpon>HistorialTravelers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HistorialTravelers.aspx.designer.cs">
+      <DependentUpon>HistorialTravelers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryRange.aspx.cs">
+      <DependentUpon>HistoryRange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HistoryRange.aspx.designer.cs">
+      <DependentUpon>HistoryRange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryRangeC.aspx.cs">
+      <DependentUpon>HistoryRangeC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HistoryRangeC.aspx.designer.cs">
+      <DependentUpon>HistoryRangeC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryTravelersC.aspx.cs">
+      <DependentUpon>HistoryTravelersC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HistoryTravelersC.aspx.designer.cs">
+      <DependentUpon>HistoryTravelersC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailAccount.aspx.cs">
+      <DependentUpon>MailAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailAccount.aspx.designer.cs">
+      <DependentUpon>MailAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailAccountActive.aspx.cs">
+      <DependentUpon>MailAccountActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailAccountActive.aspx.designer.cs">
+      <DependentUpon>MailAccountActive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailAccountActiveC.aspx.cs">
+      <DependentUpon>MailAccountActiveC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailAccountActiveC.aspx.designer.cs">
+      <DependentUpon>MailAccountActiveC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailAccountC.aspx.cs">
+      <DependentUpon>MailAccountC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailAccountC.aspx.designer.cs">
+      <DependentUpon>MailAccountC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailDeleteBussinesC.aspx.cs">
+      <DependentUpon>MailDeleteBussinesC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailDeleteBussinesC.aspx.designer.cs">
+      <DependentUpon>MailDeleteBussinesC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailSetBussinesC.aspx.cs">
+      <DependentUpon>MailSetBussinesC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailSetBussinesC.aspx.designer.cs">
+      <DependentUpon>MailSetBussinesC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MailStatus.aspx.cs">
+      <DependentUpon>MailStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MailStatus.aspx.designer.cs">
+      <DependentUpon>MailStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginReceipt.aspx.cs">
+      <DependentUpon>LoginReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginReceipt.aspx.designer.cs">
+      <DependentUpon>LoginReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentsC.aspx.cs">
+      <DependentUpon>PaymentsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentsC.aspx.designer.cs">
+      <DependentUpon>PaymentsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentsMake.aspx.cs">
+      <DependentUpon>PaymentsMake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentsMake.aspx.designer.cs">
+      <DependentUpon>PaymentsMake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentsMakeC.aspx.cs">
+      <DependentUpon>PaymentsMakeC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentsMakeC.aspx.designer.cs">
+      <DependentUpon>PaymentsMakeC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayOnLineC.aspx.cs">
+      <DependentUpon>PayOnLineC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayOnLineC.aspx.designer.cs">
+      <DependentUpon>PayOnLineC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayOnLineQuote.aspx.cs">
+      <DependentUpon>PayOnLineQuote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayOnLineQuote.aspx.designer.cs">
+      <DependentUpon>PayOnLineQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayOnLineQuoteC.aspx.cs">
+      <DependentUpon>PayOnLineQuoteC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayOnLineQuoteC.aspx.designer.cs">
+      <DependentUpon>PayOnLineQuoteC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayQuoteCulqi.aspx.cs">
+      <DependentUpon>PayQuoteCulqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayQuoteCulqi.aspx.designer.cs">
+      <DependentUpon>PayQuoteCulqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayQuoteWallet.aspx.cs">
+      <DependentUpon>PayQuoteWallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayQuoteWallet.aspx.designer.cs">
+      <DependentUpon>PayQuoteWallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayServicesWallet.aspx.cs">
+      <DependentUpon>PayServicesWallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayServicesWallet.aspx.designer.cs">
+      <DependentUpon>PayServicesWallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayWallet.aspx.cs">
+      <DependentUpon>PayWallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayWallet.aspx.designer.cs">
+      <DependentUpon>PayWallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayWalletCc.aspx.cs">
+      <DependentUpon>PayWalletCc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayWalletCc.aspx.designer.cs">
+      <DependentUpon>PayWalletCc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Placement.aspx.cs">
+      <DependentUpon>Placement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Placement.aspx.designer.cs">
+      <DependentUpon>Placement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlacementCc.aspx.cs">
+      <DependentUpon>PlacementCc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PlacementCc.aspx.designer.cs">
+      <DependentUpon>PlacementCc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PoliticsStaBye.aspx.cs">
+      <DependentUpon>PoliticsStaBye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PoliticsStaBye.aspx.designer.cs">
+      <DependentUpon>PoliticsStaBye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PoliticsTravel.aspx.cs">
+      <DependentUpon>PoliticsTravel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PoliticsTravel.aspx.designer.cs">
+      <DependentUpon>PoliticsTravel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Promotores.aspx.cs">
+      <DependentUpon>Promotores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Promotores.aspx.designer.cs">
+      <DependentUpon>Promotores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PromotoresC.aspx.cs">
+      <DependentUpon>PromotoresC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PromotoresC.aspx.designer.cs">
+      <DependentUpon>PromotoresC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResidualTree.aspx.cs">
+      <DependentUpon>ResidualTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ResidualTree.aspx.designer.cs">
+      <DependentUpon>ResidualTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResidualTreeC.aspx.cs">
+      <DependentUpon>ResidualTreeC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ResidualTreeC.aspx.designer.cs">
+      <DependentUpon>ResidualTreeC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SendEmailMissing.aspx.cs">
+      <DependentUpon>SendEmailMissing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SendEmailMissing.aspx.designer.cs">
+      <DependentUpon>SendEmailMissing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools.aspx.cs">
+      <DependentUpon>Tools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Tools.aspx.designer.cs">
+      <DependentUpon>Tools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\travelagency.aspx.cs">
+      <DependentUpon>travelagency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\travelagency.aspx.designer.cs">
+      <DependentUpon>travelagency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TravelBenefitsC.aspx.cs">
+      <DependentUpon>TravelBenefitsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TravelBenefitsC.aspx.designer.cs">
+      <DependentUpon>TravelBenefitsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Traveling.aspx.cs">
+      <DependentUpon>Traveling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Traveling.aspx.designer.cs">
+      <DependentUpon>Traveling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Activation.aspx.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Activation.aspx.designer.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActivationC.aspx.cs">
+      <DependentUpon>ActivationC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ActivationC.aspx.designer.cs">
+      <DependentUpon>ActivationC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembCulqui.aspx.cs">
+      <DependentUpon>AddMembCulqui.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembCulqui.aspx.designer.cs">
+      <DependentUpon>AddMembCulqui.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembCulquiC.aspx.cs">
+      <DependentUpon>AddMembCulquiC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembCulquiC.aspx.designer.cs">
+      <DependentUpon>AddMembCulquiC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembership.aspx.cs">
+      <DependentUpon>AddMembership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembership.aspx.designer.cs">
+      <DependentUpon>AddMembership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembPagos.aspx.cs">
+      <DependentUpon>AddMembPagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembPagos.aspx.designer.cs">
+      <DependentUpon>AddMembPagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembPayDeposito.aspx.cs">
+      <DependentUpon>AddMembPayDeposito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembPayDeposito.aspx.designer.cs">
+      <DependentUpon>AddMembPayDeposito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMembPolitics.aspx.cs">
+      <DependentUpon>AddMembPolitics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMembPolitics.aspx.designer.cs">
+      <DependentUpon>AddMembPolitics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advancepay.aspx.cs">
+      <DependentUpon>Advancepay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Advancepay.aspx.designer.cs">
+      <DependentUpon>Advancepay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdvancepayCulqi.aspx.cs">
+      <DependentUpon>AdvancepayCulqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdvancepayCulqi.aspx.designer.cs">
+      <DependentUpon>AdvancepayCulqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdvancepayCulqiC.aspx.cs">
+      <DependentUpon>AdvancepayCulqiC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdvancepayCulqiC.aspx.designer.cs">
+      <DependentUpon>AdvancepayCulqiC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdvancepayDeposito.aspx.cs">
+      <DependentUpon>AdvancepayDeposito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdvancepayDeposito.aspx.designer.cs">
+      <DependentUpon>AdvancepayDeposito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BackEnd.aspx.cs">
+      <DependentUpon>BackEnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BackEnd.aspx.designer.cs">
+      <DependentUpon>BackEnd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BListPartner.aspx.cs">
+      <DependentUpon>BListPartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BListPartner.aspx.designer.cs">
+      <DependentUpon>BListPartner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BListPartnerC.aspx.cs">
+      <DependentUpon>BListPartnerC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BListPartnerC.aspx.designer.cs">
+      <DependentUpon>BListPartnerC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BPayServices.aspx.cs">
+      <DependentUpon>BPayServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BPayServices.aspx.designer.cs">
+      <DependentUpon>BPayServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BPayServicesC.aspx.cs">
+      <DependentUpon>BPayServicesC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BPayServicesC.aspx.designer.cs">
+      <DependentUpon>BPayServicesC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangingSchedule.aspx.cs">
+      <DependentUpon>ChangingSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangingSchedule.aspx.designer.cs">
+      <DependentUpon>ChangingSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleCulqi.aspx.cs">
+      <DependentUpon>ChangingScheduleCulqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleCulqi.aspx.designer.cs">
+      <DependentUpon>ChangingScheduleCulqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleCulqiC.aspx.cs">
+      <DependentUpon>ChangingScheduleCulqiC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleCulqiC.aspx.designer.cs">
+      <DependentUpon>ChangingScheduleCulqiC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleDeposito.aspx.cs">
+      <DependentUpon>ChangingScheduleDeposito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangingScheduleDeposito.aspx.designer.cs">
+      <DependentUpon>ChangingScheduleDeposito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Code.aspx.cs">
+      <DependentUpon>Code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Code.aspx.designer.cs">
+      <DependentUpon>Code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeTravelB.aspx.cs">
+      <DependentUpon>CodeTravelB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CodeTravelB.aspx.designer.cs">
+      <DependentUpon>CodeTravelB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeTravelBC.aspx.cs">
+      <DependentUpon>CodeTravelBC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CodeTravelBC.aspx.designer.cs">
+      <DependentUpon>CodeTravelBC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeTravelBData.aspx.cs">
+      <DependentUpon>CodeTravelBData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CodeTravelBData.aspx.designer.cs">
+      <DependentUpon>CodeTravelBData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Comission.aspx.cs">
+      <DependentUpon>Comission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Comission.aspx.designer.cs">
+      <DependentUpon>Comission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComissionC.aspx.cs">
+      <DependentUpon>ComissionC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ComissionC.aspx.designer.cs">
+      <DependentUpon>ComissionC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComissionList.aspx.cs">
+      <DependentUpon>ComissionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ComissionList.aspx.designer.cs">
+      <DependentUpon>ComissionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComissionListC.aspx.cs">
+      <DependentUpon>ComissionListC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ComissionListC.aspx.designer.cs">
+      <DependentUpon>ComissionListC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consumo.aspx.cs">
+      <DependentUpon>Consumo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Consumo.aspx.designer.cs">
+      <DependentUpon>Consumo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contato.aspx.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contato.aspx.designer.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailStore.aspx.cs">
+      <DependentUpon>DetailStore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DetailStore.aspx.designer.cs">
+      <DependentUpon>DetailStore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailStore2.aspx.cs">
+      <DependentUpon>DetailStore2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DetailStore2.aspx.designer.cs">
+      <DependentUpon>DetailStore2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CurrentPointsC.aspx.cs">
+      <DependentUpon>CurrentPointsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CurrentPointsC.aspx.designer.cs">
+      <DependentUpon>CurrentPointsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisabledAccountC.aspx.cs">
+      <DependentUpon>DisabledAccountC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DisabledAccountC.aspx.designer.cs">
+      <DependentUpon>DisabledAccountC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents.aspx.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Documents.aspx.designer.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Eagency.aspx.cs">
+      <DependentUpon>Eagency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Eagency.aspx.designer.cs">
+      <DependentUpon>Eagency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditB.aspx.cs">
+      <DependentUpon>EditB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EditB.aspx.designer.cs">
+      <DependentUpon>EditB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditC.aspx.cs">
+      <DependentUpon>EditC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EditC.aspx.designer.cs">
+      <DependentUpon>EditC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditNews.aspx.cs">
+      <DependentUpon>EditNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EditNews.aspx.designer.cs">
+      <DependentUpon>EditNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditNewsC.aspx.cs">
+      <DependentUpon>EditNewsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EditNewsC.aspx.designer.cs">
+      <DependentUpon>EditNewsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPayments.aspx.cs">
+      <DependentUpon>EndPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPayments.aspx.designer.cs">
+      <DependentUpon>EndPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPayments2.aspx.cs">
+      <DependentUpon>EndPayments2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPayments2.aspx.designer.cs">
+      <DependentUpon>EndPayments2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPayments3.aspx.cs">
+      <DependentUpon>EndPayments3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPayments3.aspx.designer.cs">
+      <DependentUpon>EndPayments3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentServices.aspx.cs">
+      <DependentUpon>EndPaymentServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentServices.aspx.designer.cs">
+      <DependentUpon>EndPaymentServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndPaymentskitExo.aspx.cs">
+      <DependentUpon>EndPaymentskitExo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndPaymentskitExo.aspx.designer.cs">
+      <DependentUpon>EndPaymentskitExo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ex.aspx.cs">
+      <DependentUpon>ex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ex.aspx.designer.cs">
+      <DependentUpon>ex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilesContratos\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FilesContratos\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FreePass.aspx.cs">
+      <DependentUpon>FreePass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FreePass.aspx.designer.cs">
+      <DependentUpon>FreePass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmContrato.aspx.cs">
+      <DependentUpon>FrmContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmContrato.aspx.designer.cs">
+      <DependentUpon>FrmContrato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistorialCompras.aspx.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HistorialCompras.aspx.designer.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistorySalesC.aspx.cs">
+      <DependentUpon>HistorySalesC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HistorySalesC.aspx.designer.cs">
+      <DependentUpon>HistorySalesC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuBackend.aspx.cs">
+      <DependentUpon>MenuBackend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MenuBackend.aspx.designer.cs">
+      <DependentUpon>MenuBackend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyShopping.aspx.cs">
+      <DependentUpon>MyShopping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MyShopping.aspx.designer.cs">
+      <DependentUpon>MyShopping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Recibos\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\Recibos\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsC.aspx.cs">
+      <DependentUpon>NewsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\NewsC.aspx.designer.cs">
+      <DependentUpon>NewsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotificationC.aspx.cs">
+      <DependentUpon>NotificationC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\NotificationC.aspx.designer.cs">
+      <DependentUpon>NotificationC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pagos.aspx.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pagos.aspx.designer.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Commissions.aspx.cs">
+      <DependentUpon>Commissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Commissions.aspx.designer.cs">
+      <DependentUpon>Commissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommissionsData.aspx.cs">
+      <DependentUpon>CommissionsData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CommissionsData.aspx.designer.cs">
+      <DependentUpon>CommissionsData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexData.aspx.cs">
+      <DependentUpon>IndexData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\IndexData.aspx.designer.cs">
+      <DependentUpon>IndexData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayDeposito.aspx.cs">
+      <DependentUpon>PayDeposito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayDeposito.aspx.designer.cs">
+      <DependentUpon>PayDeposito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayDeposito2.aspx.cs">
+      <DependentUpon>PayDeposito2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayDeposito2.aspx.designer.cs">
+      <DependentUpon>PayDeposito2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayDeposito3.aspx.cs">
+      <DependentUpon>PayDeposito3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayDeposito3.aspx.designer.cs">
+      <DependentUpon>PayDeposito3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayDepositoQuote.aspx.cs">
+      <DependentUpon>PayDepositoQuote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayDepositoQuote.aspx.designer.cs">
+      <DependentUpon>PayDepositoQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payments.aspx.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Payments.aspx.designer.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentsData.aspx.cs">
+      <DependentUpon>PaymentsData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentsData.aspx.designer.cs">
+      <DependentUpon>PaymentsData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayOnLine.aspx.cs">
+      <DependentUpon>PayOnLine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayOnLine.aspx.designer.cs">
+      <DependentUpon>PayOnLine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayQuote.aspx.cs">
+      <DependentUpon>PayQuote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayQuote.aspx.designer.cs">
+      <DependentUpon>PayQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayRegisterControllers.aspx.cs">
+      <DependentUpon>PayRegisterControllers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayRegisterControllers.aspx.designer.cs">
+      <DependentUpon>PayRegisterControllers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayRegisterExoneration.aspx.cs">
+      <DependentUpon>PayRegisterExoneration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayRegisterExoneration.aspx.designer.cs">
+      <DependentUpon>PayRegisterExoneration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaysDefault.aspx.cs">
+      <DependentUpon>PaysDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PaysDefault.aspx.designer.cs">
+      <DependentUpon>PaysDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaysDefaultC.aspx.cs">
+      <DependentUpon>PaysDefaultC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PaysDefaultC.aspx.designer.cs">
+      <DependentUpon>PaysDefaultC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayServices.aspx.cs">
+      <DependentUpon>PayServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayServices.aspx.designer.cs">
+      <DependentUpon>PayServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayServices2.aspx.cs">
+      <DependentUpon>PayServices2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayServices2.aspx.designer.cs">
+      <DependentUpon>PayServices2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayServicesController.aspx.cs">
+      <DependentUpon>PayServicesController.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayServicesController.aspx.designer.cs">
+      <DependentUpon>PayServicesController.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayType.aspx.cs">
+      <DependentUpon>PayType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PayType.aspx.designer.cs">
+      <DependentUpon>PayType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PenaltyC.aspx.cs">
+      <DependentUpon>PenaltyC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PenaltyC.aspx.designer.cs">
+      <DependentUpon>PenaltyC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Politics.aspx.cs">
+      <DependentUpon>Politics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Politics.aspx.designer.cs">
+      <DependentUpon>Politics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PoliticsKit.aspx.cs">
+      <DependentUpon>PoliticsKit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PoliticsKit.aspx.designer.cs">
+      <DependentUpon>PoliticsKit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostRegister.aspx.cs">
+      <DependentUpon>PostRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PostRegister.aspx.designer.cs">
+      <DependentUpon>PostRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceiptsUser.aspx.cs">
+      <DependentUpon>ReceiptsUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ReceiptsUser.aspx.designer.cs">
+      <DependentUpon>ReceiptsUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceiptsUserC.aspx.cs">
+      <DependentUpon>ReceiptsUserC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ReceiptsUserC.aspx.designer.cs">
+      <DependentUpon>ReceiptsUserC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Red.aspx.cs">
+      <DependentUpon>Red.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Red.aspx.designer.cs">
+      <DependentUpon>Red.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RedData.aspx.cs">
+      <DependentUpon>RedData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RedData.aspx.designer.cs">
+      <DependentUpon>RedData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Referred.aspx.cs">
+      <DependentUpon>Referred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Referred.aspx.designer.cs">
+      <DependentUpon>Referred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterData.aspx.cs">
+      <DependentUpon>RegisterData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterData.aspx.designer.cs">
+      <DependentUpon>RegisterData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterNews.aspx.cs">
+      <DependentUpon>RegisterNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterNews.aspx.designer.cs">
+      <DependentUpon>RegisterNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterRef.aspx.cs">
+      <DependentUpon>RegisterRef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterRef.aspx.designer.cs">
+      <DependentUpon>RegisterRef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignOutC.aspx.cs">
+      <DependentUpon>SignOutC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SignOutC.aspx.designer.cs">
+      <DependentUpon>SignOutC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sponsored.aspx.cs">
+      <DependentUpon>Sponsored.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Sponsored.aspx.designer.cs">
+      <DependentUpon>Sponsored.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SponsoredData.aspx.cs">
+      <DependentUpon>SponsoredData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SponsoredData.aspx.designer.cs">
+      <DependentUpon>SponsoredData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store.aspx.cs">
+      <DependentUpon>Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Store.aspx.designer.cs">
+      <DependentUpon>Store.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionC.aspx.cs">
+      <DependentUpon>TransactionC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TransactionC.aspx.designer.cs">
+      <DependentUpon>TransactionC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionsDetail.aspx.cs">
+      <DependentUpon>TransactionsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TransactionsDetail.aspx.designer.cs">
+      <DependentUpon>TransactionsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionsDetailC.aspx.cs">
+      <DependentUpon>TransactionsDetailC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TransactionsDetailC.aspx.designer.cs">
+      <DependentUpon>TransactionsDetailC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TravelBenefits.aspx.cs">
+      <DependentUpon>TravelBenefits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TravelBenefits.aspx.designer.cs">
+      <DependentUpon>TravelBenefits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TypeChangeController.aspx.cs">
+      <DependentUpon>TypeChangeController.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TypeChangeController.aspx.designer.cs">
+      <DependentUpon>TypeChangeController.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateComission.aspx.cs">
+      <DependentUpon>UpdateComission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateComission.aspx.designer.cs">
+      <DependentUpon>UpdateComission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateNotifC.aspx.cs">
+      <DependentUpon>UpdateNotifC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateNotifC.aspx.designer.cs">
+      <DependentUpon>UpdateNotifC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UploadTools.aspx.cs">
+      <DependentUpon>UploadTools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UploadTools.aspx.designer.cs">
+      <DependentUpon>UploadTools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UploadToolsC.aspx.cs">
+      <DependentUpon>UploadToolsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UploadToolsC.aspx.designer.cs">
+      <DependentUpon>UploadToolsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserC.aspx.cs">
+      <DependentUpon>UserC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserC.aspx.designer.cs">
+      <DependentUpon>UserC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserNotConfirmed.aspx.cs">
+      <DependentUpon>UserNotConfirmed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserNotConfirmed.aspx.designer.cs">
+      <DependentUpon>UserNotConfirmed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserNotConfirmedC.aspx.cs">
+      <DependentUpon>UserNotConfirmedC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserNotConfirmedC.aspx.designer.cs">
+      <DependentUpon>UserNotConfirmedC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserQuote.aspx.cs">
+      <DependentUpon>UserQuote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserQuote.aspx.designer.cs">
+      <DependentUpon>UserQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserQuoteC.aspx.cs">
+      <DependentUpon>UserQuoteC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserQuoteC.aspx.designer.cs">
+      <DependentUpon>UserQuoteC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VerificationCodeC.aspx.cs">
+      <DependentUpon>VerificationCodeC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VerificationCodeC.aspx.designer.cs">
+      <DependentUpon>VerificationCodeC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VerificationPayments.aspx.cs">
+      <DependentUpon>VerificationPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VerificationPayments.aspx.designer.cs">
+      <DependentUpon>VerificationPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VerifUpgrade.aspx.cs">
+      <DependentUpon>VerifUpgrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VerifUpgrade.aspx.designer.cs">
+      <DependentUpon>VerifUpgrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VisorStandBy.aspx.cs">
+      <DependentUpon>VisorStandBy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VisorStandBy.aspx.designer.cs">
+      <DependentUpon>VisorStandBy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysorCertificado.aspx.cs">
+      <DependentUpon>VysorCertificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VysorCertificado.aspx.designer.cs">
+      <DependentUpon>VysorCertificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysorCertificadoSTBY.aspx.cs">
+      <DependentUpon>VysorCertificadoSTBY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VysorCertificadoSTBY.aspx.designer.cs">
+      <DependentUpon>VysorCertificadoSTBY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysorContratos.aspx.cs">
+      <DependentUpon>VysorContratos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VysorContratos.aspx.designer.cs">
+      <DependentUpon>VysorContratos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysorPagare.aspx.cs">
+      <DependentUpon>VysorPagare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VysorPagare.aspx.designer.cs">
+      <DependentUpon>VysorPagare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysorRCI.aspx.cs">
+      <DependentUpon>VysorRCI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VysorRCI.aspx.designer.cs">
+      <DependentUpon>VysorRCI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysorVacational.aspx.cs">
+      <DependentUpon>VysorVacational.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VysorVacational.aspx.designer.cs">
+      <DependentUpon>VysorVacational.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Wallet.aspx.cs">
+      <DependentUpon>Wallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Wallet.aspx.designer.cs">
+      <DependentUpon>Wallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WalletAmortization.aspx.cs">
+      <DependentUpon>WalletAmortization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WalletAmortization.aspx.designer.cs">
+      <DependentUpon>WalletAmortization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WalletC.aspx.cs">
+      <DependentUpon>WalletC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WalletC.aspx.designer.cs">
+      <DependentUpon>WalletC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_DatePayInitial.aspx.cs">
+      <DependentUpon>_DatePayInitial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\_DatePayInitial.aspx.designer.cs">
+      <DependentUpon>_DatePayInitial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_VitualOffice.aspx.cs">
+      <DependentUpon>_VitualOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\_VitualOffice.aspx.designer.cs">
+      <DependentUpon>_VitualOffice.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doc\CONTRATO_DE_PRESTACION_DE_SERVICIO_RRCR_PLAN ACCIONES_Y_RECOMENDACION.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Doc\Contrato_RCI.docx" />
+    <Content Include="Doc\CONTRATO_DE_PRESTACION_DE_SERVICIO_RRCR_PLAN ACCIONES_Y_RECOMENDACION.pdf" />
+    <Content Include="Doc\Contrato_RCI.pdf" />
+    <Content Include="Doc\Reglamento_de_Ética_inResorts.pdf" />
+    <Content Include="Doc\Plan_beneficios_riberadelrio_inResorts.docx" />
+    <Content Include="Doc\Plan_beneficios_riberadelrio_inResorts.pdf" />
+    <Content Include="Doc\PLAN_COMPENSACION_INRESORTS.docx" />
+    <Content Include="Doc\PLAN_COMPENSACION_INRESORTS.pdf" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile10.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile11.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile12.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile13.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile14.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile15.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile16.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile17.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile18.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile19.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile20.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile21.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile22.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile23.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile24.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile25.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile26.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile27.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile28.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile29.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile30.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile31.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile32.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile33.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile34.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile35.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile36.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile37.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile38.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile39.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile40.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile41.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile5.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile6.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile7.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile8.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile9.pubxml" />
+    <None Include="Properties\PublishProfiles\MULTINIVEL - Web Deploy.pubxml" />
+    <Content Include="Views\ContractIs_archivos\themedata.thmx" />
+    <None Include="Properties\PublishProfiles\oficinavirtualir - Web Deploy.pubxml" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\316153748717666" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\analytics.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\app.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\AuthenticationService.Authenticate" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\bootstrap.min.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\common.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\fbevents.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\frontpage.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-1.10.2.min.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-1.12.4.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-confirm.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.10.3.custom.min.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.12.4.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\js" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDK.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDKUpdaterWorker.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDKWorker.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ProcesoCompra.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ProcesoCompraCulqui.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\republica_ar.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\republica_init.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ScriptResource%281%29.axd" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ScriptResource.axd" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\script_menu.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\sdk.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\stats.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\util.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\v2" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\vainilla-js-carouselhome.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\WebResource%281%29.axd" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\WebResource.axd" />
+    <Content Include="Views\pagos_files\analytics.js.descarga" />
+    <Content Include="Views\pagos_files\common.min-4.24.5.0.js.descarga" />
+    <Content Include="Views\pagos_files\express_per.min-4.25.5.0.js.descarga" />
+    <Content Include="Views\pagos_files\external.min.js.descarga" />
+    <Content Include="Views\pagos_files\Hubs" />
+    <Content Include="Views\pagos_files\images_loaded.min.js.descarga" />
+    <Content Include="Views\pagos_files\jQuery-FontSpy.js.descarga" />
+    <Content Include="Views\pagos_files\jquery.min.js.descarga" />
+    <Content Include="Views\pagos_files\jquery.signalR-2.2.2.min.js.descarga" />
+    <Content Include="Views\pagos_files\jquery.validate.min.js.descarga" />
+    <Content Include="Views\pagos_files\knockout-min.js.descarga" />
+    <Content Include="Views\pagos_files\track.js.descarga" />
+    <Content Include="Views\CONTRATO_DE_PRESTACION_DE_SERVICIO_archivos\themedata.thmx" />
+    <None Include="Properties\PublishProfiles\oficinaVIrtualVe - Web Deploy.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Login_files\3a4d447407" />
+    <Content Include="Views\Login_files\EpzYFGJwbu2.js.download" />
+    <Content Include="Views\Login_files\jQueryCoreMin.js.download" />
+    <Content Include="Views\Login_files\jQueryUi.min.js.download" />
+    <Content Include="Views\Login_files\kendo.PmDialog.js.download" />
+    <Content Include="Views\Login_files\kendo.web.min.js.download" />
+    <Content Include="Views\Login_files\nr-spa-1099.min.js.download" />
+    <Content Include="Views\Login_files\PMCommonFull.js.download" />
+    <Content Include="Views\Login_files\PMCommonHeadLoadingFull.js.download" />
+    <Content Include="Views\Login_files\sdk.js.download" />
+    <Content Include="Views\Login_files\seal" />
+    <Content Include="Resources\PoliticsPdf\Plan_beneficios_riberadelrio_inResorts.pdf" />
+    <Content Include="Resources\PoliticsPdf\Reglamento_de_Ética_inResorts.pdf" />
+    <Content Include="Views\tienda_files\js" />
+    <Content Include="Resources\PoliticsPdf\PLAN_COMPENSACION_INRESORTS.docx" />
+    <Content Include="Resources\PoliticsPdf\PLAN_COMPENSACION_INRESORTS.pdf" />
+    <Content Include="Views\HistorialCompras_files\bootstrap-datepicker.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\bootstrap.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\bootstrap3-typeahead.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\Chart.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\chosen.jquery.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\croppie.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\css" />
+    <Content Include="Views\HistorialCompras_files\datatables.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\inspinia.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jasny-bootstrap.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery-3.1.1.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.bootstrap-touchspin.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.flot.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.flot.resize.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.flot.tooltip.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.mask.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.metisMenu.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.mousewheel.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.panzoom.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.peity.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.slimscroll.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\jquery.validate.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\pace.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\peity-demo.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\slick.min.css.map" />
+    <Content Include="Views\HistorialCompras_files\slick.min.js.descarga" />
+    <Content Include="Views\HistorialCompras_files\sweetalert.min.js.descarga" />
+    <Content Include="Views\FilesContratos\StandBye.rdlc" />
+    <Content Include="Resources\PoliticsPdf\PLAN_DE_BENEFICIOS_INRESORTS.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Archivos\img\" />
+    <Folder Include="Archivos\pdf\" />
+    <Folder Include="Archivos\trash\" />
+    <Folder Include="Archivos\videos\" />
+    <Folder Include="Archivos\word\" />
+    <Folder Include="Models\" />
+    <Folder Include="Pdf\" />
+    <Folder Include="Resources\ImgHistoryRange\" />
+    <Folder Include="Resources\ImgServices\" />
+    <Folder Include="Resources\Make\" />
+    <Folder Include="Resources\RecibosRegister\" />
+    <Folder Include="Resources\trash\" />
+    <Folder Include="Resources\video\" />
+    <Folder Include="Resources\wallet\" />
+    <Folder Include="SqlServerTypes\x64\" />
+    <Folder Include="SqlServerTypes\x86\" />
+    <Folder Include="Views\Backend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinesRules\BussinesRules.csproj">
+      <Project>{9de685de-9c41-46da-8112-e47aa111aa4e}</Project>
+      <Name>BussinesRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\culqi.net\culqi.net.csproj">
+      <Project>{fdcb25a7-5bda-41e6-81fe-e6e2fb359013}</Project>
+      <Name>culqi.net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{dbbcf89c-d735-48aa-be23-2f45d225be97}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FilesContratos\CertificadoSTBY.rdlc" />
+    <EmbeddedResource Include="Views\FilesContratos\Certificado.rdlc" />
+    <EmbeddedResource Include="Views\FilesContratos\Contrato.rdlc" />
+    <EmbeddedResource Include="Views\FilesContratos\Rci.rdlc" />
+    <EmbeddedResource Include="Views\FilesContratos\StandBy.rdlc" />
+    <EmbeddedResource Include="Views\FilesContratos\Vacacional.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50447</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51298/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

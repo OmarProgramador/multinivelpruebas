@@ -1,0 +1,266 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA8E5C94-ADCC-4794-8EC0-82C0C8648A36}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Upload</RootNamespace>
+    <AssemblyName>Upload</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Views\pagos_files\bank_4_1001_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1005_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1006_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1011_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1024_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_1025_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_8250_1.jpg" />
+    <Content Include="Views\pagos_files\bank_4_8324_1.jpg" />
+    <Content Include="Views\pagos_files\blank.gif" />
+    <Content Include="Views\pagos_files\BrandExpress5155.png" />
+    <Content Include="Views\pagos_files\bullet-1.jpg" />
+    <Content Include="Views\pagos_files\bullet-2.jpg" />
+    <Content Include="Views\pagos_files\bullet-3.jpg" />
+    <Content Include="Views\pagos_files\bullet-4.jpg" />
+    <Content Include="Views\pagos_files\common.min-4.24.6.0.css" />
+    <Content Include="Views\pagos_files\font-awesome.min.css" />
+    <Content Include="Views\pagos_files\fonts.css" />
+    <Content Include="Views\pagos_files\icon-btn-banca-internet.png" />
+    <Content Include="Views\pagos_files\loading30.gif" />
+    <Content Include="Views\pagos_files\logo_safetypay.png" />
+    <Content Include="Views\pagos_files\print_per.min.css" />
+    <Content Include="Views\pagos_files\saved_resource.html" />
+    <Content Include="Views\pagos_files\slick.min.css" />
+    <Content Include="Views\pagos_files\styles_per.min-4.25.5.0.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\a2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\americanexpresspayu2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\b2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\banca-por-internet-safetypay-nuevo.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\BANCOS-PAGO-EN-EFECTIVO.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\bootstrap.min.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\buffet2c.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\buscador-lupa1.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\carritodecompras.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\cerrar.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\cerrar_suboffers_cupon.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\CssProcesoCompra.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\cuponidadlogonuevo.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\d2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\dinersclubpayu2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\e2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\entrar.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\entrar_cuponidad.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\entre2b.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\f%281%29.txt" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\f.txt" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\f2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\fulldays2018.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\g2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_casa.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_close2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_grupo_republica.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_reloj.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_sobre.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_telefono.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ico_whatsapp_home.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ingresar_cuponidad_cupon.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ingresar_cuponidad_popup.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-confirm.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.10.3.custom2.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LibroReclamacionesIcono.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LogoLaRep.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LogoLib.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\LogoPop.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\logo_visa.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\lupa_buscador.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\masterBootStyle.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\mastercardpayu2.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\miscupones.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\moneda.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ofertacineplanet.jpg" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDKStyles.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\PagoEEfectivo.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\PagoETransferencia.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\styleshome.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\stylesmenumobile.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\styles_menu.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\suscribirme_cupon_cuponidad.png" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\trnHszv6jVd.html" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\vainilla-js-carousel.css" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\webPushAnalytics.html" />
+    <Content Include="Views\Upload.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Views\pagos_files\analytics.js.descarga" />
+    <Content Include="Views\pagos_files\common.min-4.24.5.0.js.descarga" />
+    <Content Include="Views\pagos_files\express_per.min-4.25.5.0.js.descarga" />
+    <Content Include="Views\pagos_files\external.min.js.descarga" />
+    <Content Include="Views\pagos_files\Hubs" />
+    <Content Include="Views\pagos_files\images_loaded.min.js.descarga" />
+    <Content Include="Views\pagos_files\jQuery-FontSpy.js.descarga" />
+    <Content Include="Views\pagos_files\jquery.min.js.descarga" />
+    <Content Include="Views\pagos_files\jquery.signalR-2.2.2.min.js.descarga" />
+    <Content Include="Views\pagos_files\jquery.validate.min.js.descarga" />
+    <Content Include="Views\pagos_files\knockout-min.js.descarga" />
+    <Content Include="Views\pagos_files\track.js.descarga" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\316153748717666" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\analytics.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\app.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\AuthenticationService.Authenticate" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\bootstrap.min.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\common.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\fbevents.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\frontpage.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-1.10.2.min.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-1.12.4.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-confirm.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.10.3.custom.min.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\jquery-ui-1.12.4.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\js" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDK.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDKUpdaterWorker.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\OneSignalSDKWorker.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ProcesoCompra.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ProcesoCompraCulqui.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\republica_ar.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\republica_init.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\script_menu.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ScriptResource%281%29.axd" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\ScriptResource.axd" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\sdk.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\stats.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\util.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\v2" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\vainilla-js-carouselhome.js.download" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\WebResource%281%29.axd" />
+    <Content Include="Views\Proceso de Pago - Cuponidad_files\WebResource.axd" />
+    <None Include="Properties\PublishProfiles\Upload20181026051920 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Upload20181026051920 - Web Deploy1.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60754</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60754/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

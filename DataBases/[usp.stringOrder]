@@ -1,0 +1,163 @@
+ ALTER PROC [dbo].[usp.stringOrder] @data varchar(max)
+ as begin
+	declare @count int
+	declare @count2 int
+	declare @index int
+	declare @index2 int
+	declare @current varchar(max)
+	declare @store varchar(max)
+	declare @storage varchar(max)
+	declare @_var varchar(max)
+	declare @aux varchar(max)
+	declare @aux2 varchar(max)
+	SET @index2=0
+	set @current=''
+	set @storage=@data
+	set @count=0
+	set @count2=0
+	set @index=(DATALENGTH(@data) - DATALENGTH(REPLACE(@data, '¬', '')))
+	set @store=(select  top 1 splitdata  from split(@storage,'¬') where id=1  order by splitdata asc)
+		set @_var=(select  top 1 splitdata  from split(@store,'_') where id=1  order by splitdata asc)
+		set @_var=( select(select stuff((select '¬'+ splitdata   from split(@storage,'¬') where splitdata like '%'+@_var+'_%'for xml path('')),1,1,'')))
+		if(@_var!=null or @_var!='')
+		begin
+			set @index2=((DATALENGTH(@_var) - DATALENGTH(REPLACE(@_var, '¬', ''))))
+			while(@count2<=@index2)
+			begin
+				set @count2=@count2+1
+				set @aux=(select  top 1 splitdata  from split(@_var,'¬') where id=@count2  order by splitdata asc)
+				set @storage=REPLACE(@storage,@aux+'¬','')
+				set @storage=REPLACE(@storage,'¬'+@aux,'')	
+			end
+			set @current=@current+@_var
+		end
+		else 
+		begin
+			set @current=@current+@store
+		end
+	----intelligence----
+	set @count2=0
+	set @index=((DATALENGTH(@current) - DATALENGTH(REPLACE(@current, '¬', ''))))
+	while(@count<=@index)
+	begin
+		set @count=@count+1
+		set @aux=(select  top 1 splitdata  from split(@current,'¬') where id=@count  order by splitdata asc)
+		set @_var=(select  top 1 splitdata  from split(@aux,'_') where id=2  order by splitdata asc)
+		set @_var=( select(select stuff((select '¬'+splitdata   from split(@storage,'¬') where splitdata like '%'+@_var+'_%'for xml path('')),1,1,'')))
+		set @index2=((DATALENGTH(@_var) - DATALENGTH(REPLACE(@_var, '¬', ''))))
+		if((@_var!=null or @_var!='') and @index2>1)
+		begin
+			while(@count2<=@index2 )
+			begin
+				set @count2=@count2+1
+				set @aux2=(select  top 1 splitdata  from split(@_var,'¬') where id=@count2  order by splitdata asc)
+				set @storage=REPLACE(@storage,@aux2+'¬','')
+				set @storage=REPLACE(@storage,'¬'+@aux2,'')	
+			end
+			set @count2=0
+			set @current=REPLACE(@current,@aux,@aux+'¬'+@_var)
+			set @index=((DATALENGTH(@current) - DATALENGTH(REPLACE(@current, '¬', ''))))
+			set @storage=REPLACE(@storage,@aux+'¬','')
+			set @storage=REPLACE(@storage,'¬'+@aux,'')	
+		end
+		else 
+		begin
+			if(@_var!= null or @_var!='')
+			begin
+				set @current=REPLACE(@current,@aux,@aux+'¬'+@_var)
+			end
+			if(@count>@index)
+			begin
+				set @index=((DATALENGTH(@current) - DATALENGTH(REPLACE(@current, '¬', ''))))
+			end
+			set @storage=REPLACE(@storage,@aux+'¬','')
+			set @storage=REPLACE(@storage,'¬'+@aux,'')	
+		end
+	
+	end
+	----intelligence-----
+	DECLARE @indexJson INT
+	DECLARE @countJson INT
+	DECLARE @countapos INT
+	DECLARE @father		VARCHAR(MAX)
+	DECLARE @father2		VARCHAR(MAX)
+	DECLARE @son		VARCHAR(MAX)
+	DECLARE @son2		VARCHAR(MAX)
+	DECLARE @response		VARCHAR(MAX)
+	DECLARE @coin		INT
+	DECLARE @coin2		INT
+	DECLARE @keysOpen		INT
+	DECLARE @keysClose		INT
+	DECLARE @keysSub		INT
+	set @indexJson=((DATALENGTH(@current) - DATALENGTH(REPLACE(@current, '¬', ''))) + 1)
+	set @countJson = 0
+	set @countapos = 0
+	set @coin = 0
+	set @coin2 = 0
+	set @keysOpen = 0
+	set @keysClose = 0
+	set @keysSub = 0
+	SET @response = ''
+	SET @father = ''
+	SET @father2 = ''
+	SET @son = ''
+	SET @son2 = ''
+	WHILE(@indexJson > @countJson)
+	BEGIN
+		SET @countJson = @countJson + 1
+		if(@countJson = 1)
+		begin
+			set @father=(select  top 1 splitdata  from split(@current,'¬') where id=@countJson  order by splitdata asc)
+			SET @response = @response + dbo.build_stFather(@father)
+		end
+			set @father=(select  top 1 splitdata  from split(@current,'¬') where id=@countJson  order by splitdata asc)
+			set @father=(select  top 1 splitdata  from split(@father,'_') where id=2  order by splitdata asc)
+			set @son=(select  top 1 splitdata  from split(@current,'¬') where id=(@countJson + 1)  order by splitdata asc)
+			set @son=(select  top 1 splitdata  from split(@son,'_') where id=1  order by splitdata asc)
+			if(@son != '')
+			begin
+				IF(@father = @son)
+				begin
+					set @son=(select  top 1 splitdata  from split(@current,'¬') where id=(@countJson + 1)  order by splitdata asc)
+					SET @response = @response + dbo.build_st(@son) + ''
+					--
+					set @father=(select  top 1 splitdata  from split(@current,'¬') where id=(@countJson + 2)  order by splitdata asc)
+					set @father=(select  top 1 splitdata  from split(@father,'_') where id=1  order by splitdata asc)
+					set @son2=(select  top 1 splitdata  from split(@son,'_') where id= 2 order by splitdata asc)
+					if((@father != @son2))
+					begin
+						SET @keysClose = (select ((DATALENGTH(@response) - DATALENGTH(REPLACE(@response, '}', '')))))
+						SET @keysOpen = (select ((DATALENGTH(@response) - DATALENGTH(REPLACE(@response, '{', '')))))
+							SET @keysSub =( @keysOpen-@keysClose)
+							print 'cerrado'+convert(varchar,@keysClose)
+							print 'abierto'+convert(varchar,@keysOpen)
+						set @countapos  = 0
+						while(@keysSub > (@countapos+1))
+						begin
+							print 'resta'+convert(varchar,@keysSub)
+							SET @countapos = @countapos + 1
+							SET @response = @response + '}]'
+						end
+							SET @response = @response + '},'
+						end
+				end
+				else
+				begin
+					print 'current:'+@current
+					print '@countJson'+ convert(varchar,@countJson)
+					set @son=(select  top 1 splitdata  from split(@current,'¬') where id=(@countJson + 1)  order by splitdata asc)
+					if(@countJson = (@indexJson - 1))
+					begin	
+					print 'hijo deppera'				
+					SET @response = @response + '},'+dbo.build_stFather(@son)		
+					end 
+					else
+					begin
+					SET @response = @response + ''+dbo.build_stFather(@son)		
+					end							
+				end
+			end
+		END
+	SET @response = '[' + @response + '}]'
+	SELECT  @response
+end

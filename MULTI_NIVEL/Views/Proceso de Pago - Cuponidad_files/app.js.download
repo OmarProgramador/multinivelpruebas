@@ -1,0 +1,55 @@
+var carouselCategoriasMobile = new Carousel({
+    elem: 'categorias-carousel-mobile',    // id of the carousel container
+    autoplay: true,     // starts the rotation automatically
+    infinite: true,      // enables the infinite mode
+    interval: 5000,      // interval between slide changes
+    initial: 0,          // slide to start with
+    dots: false,          // show navigation dots
+    arrows: true,        // show navigation arrows
+    slides: 5,
+    slideWidth: 90,
+    touch: true,
+    resize: true,
+    arrowPrev: 'arrowPrev-navTag-mobile',
+    arrowNext: 'arrowNext-navTag-mobile'
+});
+
+carouselCategoriasMobile.init();
+
+var carouselCategoriasDesktop = new Carousel({
+    elem: 'categorias-carousel-desktop',    // id of the carousel container
+    autoplay: true,     // starts the rotation automatically
+    infinite: true,      // enables the infinite mode
+    interval: 4000,      // interval between slide changes
+    initial: 0,          // slide to start with
+    dots: false,          // show navigation dots
+    arrows: true,        // show navigation arrows
+    slides: 8,
+    slideWidth: 133,
+    touch: true,
+    resize: true,
+    arrowPrev: 'arrowPrev-navTag-desktop',
+    arrowNext: 'arrowNext-navTag-desktop'
+});
+
+carouselCategoriasDesktop.init();
+
+
+var carouselCategoriasMobileHome = new Carousel({
+    elem: 'categorias-carousel-mobile-Home',    // id of the carousel container
+    autoplay: true,     // starts the rotation automatically
+    infinite: true,      // enables the infinite mode
+    interval: 5000,      // interval between slide changes
+    initial: 0,          // slide to start with
+    dots: false,          // show navigation dots
+    arrows: true,        // show navigation arrows
+    slides: 2,
+    slideWidth: 280,
+    touch: true,
+    resize: true,
+    arrowPrev: 'arrowPrev-navTag-mobile',
+    arrowNext: 'arrowNext-navTag-mobile-botton'
+});
+
+carouselCategoriasMobileHome.init();
+

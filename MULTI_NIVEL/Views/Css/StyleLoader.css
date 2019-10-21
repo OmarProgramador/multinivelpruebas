@@ -1,0 +1,99 @@
+﻿
+.PopupBackground {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(128, 128, 128,0.5);
+    z-index:9999;
+}
+
+.PopupBarTitle {
+    background-color: #FFBF00;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.PopupWindow, .PopupFees {
+    position: absolute;
+    background-color: #fff;
+}
+
+.PopupWindow {
+    left: 30%;
+    top: 20%;
+    width: 37%;
+    height: 63%;
+}
+
+.PopupContent {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.PopupContentLeft, .PopupContentRigth {
+    width: 50%;
+    float: left;
+}
+
+    .PopupContentLeft input, .PopupContentRigth input {
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .PopupContentLeft select {
+        width: 87%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .PopupContentRigth textarea {
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+.PopupFees {
+    left: 20%; /*separacion izquierda*/
+    top: 5%; /*separacion arriba*/
+    width: 60%; /*ancho*/
+    height: 100%; /*alto*/
+    font-size: 11px;
+}
+
+.PopupProgressBar {
+    position: absolute;
+    background-color: none;
+    left: 45%;
+    top: 40%;
+    width: 40%;
+    height: 40%;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    z-index:10000;
+}
+
+.loader {
+    padding: 8px;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
